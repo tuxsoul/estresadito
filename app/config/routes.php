@@ -33,7 +33,7 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/views/pages/home.thtml)...
  */
-	$Route->connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+	$Route->connect('/', array('controller' => 'panel', 'action' => 'index', 'Panel'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

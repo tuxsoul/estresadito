@@ -14,7 +14,7 @@
 	<!-- If you'd like some sort of menu to show up on all of your views, include it here -->
 	<div id="header">
 		<div id="menu">
-			<?php echo $html->link('Home', '/'); ?>
+			<?php echo $html->link('Inicio', '/'); ?>
 		</div>
 	</div>
 
