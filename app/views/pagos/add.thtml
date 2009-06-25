@@ -1,0 +1,53 @@
+<h2>New Pago</h2>
+<form action="<?php echo $html->url('/pagos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Pago/alumnos_id', 'Alumnos');?>
+ 	<?php echo $html->selectTag('Pago/alumnos_id', $alumnos, $html->tagValue('Pago/alumnos_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Pago/alumnos_id', 'Please select the Alumnos.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Pago/costos_id', 'Costos');?>
+ 	<?php echo $html->selectTag('Pago/costos_id', $costos, $html->tagValue('Pago/costos_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Pago/costos_id', 'Please select the Costos.') ?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Pago/cobertura_inicial', 'Cobertura Inicial');?>
+ 	<?php echo $html->dateTimeOptionTag('Pago/cobertura_inicial', 'MDY' , 'NONE', $html->tagValue('Pago/cobertura_inicial'), array());?>
+	<?php echo $html->tagErrorMsg('Pago/cobertura_inicial', 'Please select the Cobertura Inicial.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Pago/cobertura_final', 'Cobertura Final');?>
+ 	<?php echo $html->dateTimeOptionTag('Pago/cobertura_final', 'MDY' , 'NONE', $html->tagValue('Pago/cobertura_final'), array());?>
+	<?php echo $html->tagErrorMsg('Pago/cobertura_final', 'Please select the Cobertura Final.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Pago/cobertura_total', 'Cobertura Total');?>
+ 	<?php echo $html->dateTimeOptionTag('Pago/cobertura_total', 'MDY' , 'NONE', $html->tagValue('Pago/cobertura_total'), array());?>
+	<?php echo $html->tagErrorMsg('Pago/cobertura_total', 'Please select the Cobertura Total.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Pago/importe', 'Importe');?>
+ 	<?php echo $html->input('Pago/importe', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Pago/importe', 'Please enter the Importe.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Pago/adeudo', 'Adeudo');?>
+ 	<?php echo $html->input('Pago/adeudo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Pago/adeudo', 'Please enter the Adeudo.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag( 'Pago/observaciones', 'Observaciones' );?>
+ 	<?php echo $html->textarea('Pago/observaciones', array('cols' => '60', 'rows' => '10'));?>
+	<?php echo $html->tagErrorMsg('Pago/observaciones', 'Please enter the Observaciones.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Add');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('List Pagos', '/pagos/index')?></li>
+<li><?php echo $html->link('View Alumnos', '/alumnos/index/');?></li>
+<li><?php echo $html->link('Add Alumnos', '/alumnos/add/');?></li>
+<li><?php echo $html->link('View Costos', '/costos/index/');?></li>
+<li><?php echo $html->link('Add Costos', '/costos/add/');?></li>
+</ul>

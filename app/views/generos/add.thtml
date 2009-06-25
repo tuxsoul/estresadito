@@ -1,0 +1,14 @@
+<h2>New Genero</h2>
+<form action="<?php echo $html->url('/generos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Genero/valor', 'Valor');?>
+ 	<?php echo $html->input('Genero/valor', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Genero/valor', 'Please enter the Valor.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Add');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('List Generos', '/generos/index')?></li>
+</ul>

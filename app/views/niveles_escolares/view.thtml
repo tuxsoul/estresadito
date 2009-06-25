@@ -1,0 +1,104 @@
+<div class="nivelesEscolare">
+<h2>View Niveles Escolare</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $nivelesEscolare['NivelesEscolare']['id']?></dd>
+	<dt>Valor</dt>
+	<dd>&nbsp;<?php echo $nivelesEscolare['NivelesEscolare']['valor']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Edit Niveles Escolare',   '/niveles_escolares/edit/' . $nivelesEscolare['NivelesEscolare']['id']) ?> </li>
+	<li><?php echo $html->link('Delete Niveles Escolare', '/niveles_escolares/delete/' . $nivelesEscolare['NivelesEscolare']['id'], null, 'Are you sure you want to delete: id ' . $nivelesEscolare['NivelesEscolare']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('List Niveles Escolares',   '/niveles_escolares/index') ?> </li>
+	<li><?php echo $html->link('New Niveles Escolare',	'/niveles_escolares/add') ?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Related Ciclos Escolares</h3>
+<?php if (!empty($nivelesEscolare['CiclosEscolare'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach ($nivelesEscolare['CiclosEscolare']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Actions</th>
+</tr>
+<?php foreach ($nivelesEscolare['CiclosEscolare'] as $ciclosEscolare):?>
+<tr>
+	<?php foreach ($ciclosEscolare as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('View', '/ciclos_escolares/view/' . $ciclosEscolare['id']);?>
+		<?php echo $html->link('Edit', '/ciclos_escolares/edit/' . $ciclosEscolare['id']);?>
+		<?php echo $html->link('Delete', '/ciclos_escolares/delete/' . $ciclosEscolare['id'], null, 'Are you sure you want to delete: id ' . $ciclosEscolare['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Ciclos Escolare', '/ciclos_escolares/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Related Alumnos</h3>
+<?php if (!empty($nivelesEscolare['Alumno'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach ($nivelesEscolare['Alumno']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Actions</th>
+</tr>
+<?php foreach ($nivelesEscolare['Alumno'] as $alumno):?>
+<tr>
+	<?php foreach ($alumno as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('View', '/alumnos/view/' . $alumno['id']);?>
+		<?php echo $html->link('Edit', '/alumnos/edit/' . $alumno['id']);?>
+		<?php echo $html->link('Delete', '/alumnos/delete/' . $alumno['id'], null, 'Are you sure you want to delete: id ' . $alumno['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Alumno', '/alumnos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Related Costos</h3>
+<?php if (!empty($nivelesEscolare['Costo'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach ($nivelesEscolare['Costo']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Actions</th>
+</tr>
+<?php foreach ($nivelesEscolare['Costo'] as $costo):?>
+<tr>
+	<?php foreach ($costo as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('View', '/costos/view/' . $costo['id']);?>
+		<?php echo $html->link('Edit', '/costos/edit/' . $costo['id']);?>
+		<?php echo $html->link('Delete', '/costos/delete/' . $costo['id'], null, 'Are you sure you want to delete: id ' . $costo['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Costo', '/costos/add/');?> </li>
+</ul>
+</div>

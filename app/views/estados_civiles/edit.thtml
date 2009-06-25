@@ -1,0 +1,16 @@
+<h2>Edit Estados Civile</h2>
+<form action="<?php echo $html->url('/estados_civiles/edit/'.$html->tagValue('EstadosCivile/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('EstadosCivile/valor', 'Valor');?>
+ 	<?php echo $html->input('EstadosCivile/valor', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('EstadosCivile/valor', 'Please enter the Valor.');?>
+</div>
+<?php echo $html->hidden('EstadosCivile/id')?>
+<div class="submit">
+	<?php echo $html->submit('Save');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Delete','/estados_civiles/delete/' . $html->tagValue('EstadosCivile/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('EstadosCivile/id'));?>
+<li><?php echo $html->link('List Estados Civiles', '/estados_civiles/index')?></li>
+</ul>

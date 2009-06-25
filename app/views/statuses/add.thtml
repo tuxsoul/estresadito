@@ -1,0 +1,14 @@
+<h2>New Status</h2>
+<form action="<?php echo $html->url('/statuses/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Status/valor', 'Valor');?>
+ 	<?php echo $html->input('Status/valor', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Status/valor', 'Please enter the Valor.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Add');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('List Statuses', '/statuses/index')?></li>
+</ul>

@@ -1,0 +1,28 @@
+<div class="alumnosGrupos">
+<h2>List Alumnos Grupos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Grupos</th>
+	<th>Alumnos</th>
+	<th>Actions</th>
+</tr>
+<?php foreach ($alumnosGrupos as $alumnosGrupo): ?>
+<tr>
+	<td><?php echo $alumnosGrupo['AlumnosGrupo']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($alumnosGrupo['']['id'], '/grupos/view/' .$alumnosGrupo['']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($alumnosGrupo['']['id'], '/alumnos/view/' .$alumnosGrupo['']['id'])?></td>
+	<td class="actions">
+		<?php echo $html->link('View','/alumnos_grupos/view/' . $alumnosGrupo['AlumnosGrupo']['id'])?>
+		<?php echo $html->link('Edit','/alumnos_grupos/edit/' . $alumnosGrupo['AlumnosGrupo']['id'])?>
+		<?php echo $html->link('Delete','/alumnos_grupos/delete/' . $alumnosGrupo['AlumnosGrupo']['id'], null, 'Are you sure you want to delete id ' . $alumnosGrupo['AlumnosGrupo']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Alumnos Grupo', '/alumnos_grupos/add'); ?></li>
+</ul>
+</div>

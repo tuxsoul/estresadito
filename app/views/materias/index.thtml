@@ -1,0 +1,26 @@
+<div class="materias">
+<h2>List Materias</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Nombre</th>
+	<th>Actions</th>
+</tr>
+<?php foreach ($materias as $materium): ?>
+<tr>
+	<td><?php echo $materium['Materia']['id']; ?></td>
+	<td><?php echo $materium['Materia']['nombre']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('View','/materias/view/' . $materium['Materia']['id'])?>
+		<?php echo $html->link('Edit','/materias/edit/' . $materium['Materia']['id'])?>
+		<?php echo $html->link('Delete','/materias/delete/' . $materium['Materia']['id'], null, 'Are you sure you want to delete id ' . $materium['Materia']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Materium', '/materias/add'); ?></li>
+</ul>
+</div>

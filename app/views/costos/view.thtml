@@ -1,0 +1,56 @@
+<div class="costo">
+<h2>View Costo</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $costo['Costo']['id']?></dd>
+	<dt>Niveles Escolares</dt>
+	<dd>&nbsp;<?php echo $html->link($costo['']['id'], '/niveles_escolares/view/' .$costo['']['id'])?></dd>
+	<dt>Concepto</dt>
+	<dd>&nbsp;<?php echo $costo['Costo']['concepto']?></dd>
+	<dt>Importe</dt>
+	<dd>&nbsp;<?php echo $costo['Costo']['importe']?></dd>
+	<dt>Descuento</dt>
+	<dd>&nbsp;<?php echo $costo['Costo']['descuento']?></dd>
+	<dt>Descuento Porcentaje</dt>
+	<dd>&nbsp;<?php echo $costo['Costo']['descuento_porcentaje']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Edit Costo',   '/costos/edit/' . $costo['Costo']['id']) ?> </li>
+	<li><?php echo $html->link('Delete Costo', '/costos/delete/' . $costo['Costo']['id'], null, 'Are you sure you want to delete: id ' . $costo['Costo']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('List Costos',   '/costos/index') ?> </li>
+	<li><?php echo $html->link('New Costo',	'/costos/add') ?> </li>
+	<li><?php echo $html->link('List Niveles Escolare', '/niveles_escolares/index/')?> </li>
+	<li><?php echo $html->link('New Niveles Escolares', '/niveles_escolares/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Related Pagos</h3>
+<?php if (!empty($costo['Pago'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach ($costo['Pago']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Actions</th>
+</tr>
+<?php foreach ($costo['Pago'] as $pago):?>
+<tr>
+	<?php foreach ($pago as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('View', '/pagos/view/' . $pago['id']);?>
+		<?php echo $html->link('Edit', '/pagos/edit/' . $pago['id']);?>
+		<?php echo $html->link('Delete', '/pagos/delete/' . $pago['id'], null, 'Are you sure you want to delete: id ' . $pago['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Pago', '/pagos/add/');?> </li>
+</ul>
+</div>

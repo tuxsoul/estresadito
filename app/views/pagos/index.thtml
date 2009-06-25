@@ -1,0 +1,42 @@
+<div class="pagos">
+<h2>List Pagos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Alumnos</th>
+	<th>Costos</th>
+	<th>Cobertura Inicial</th>
+	<th>Cobertura Final</th>
+	<th>Cobertura Total</th>
+	<th>Importe</th>
+	<th>Adeudo</th>
+	<th>Observaciones</th>
+	<th>Fecha</th>
+	<th>Actions</th>
+</tr>
+<?php foreach ($pagos as $pago): ?>
+<tr>
+	<td><?php echo $pago['Pago']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($pago['']['id'], '/alumnos/view/' .$pago['']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($pago['']['id'], '/costos/view/' .$pago['']['id'])?></td>
+	<td><?php echo $pago['Pago']['cobertura_inicial']; ?></td>
+	<td><?php echo $pago['Pago']['cobertura_final']; ?></td>
+	<td><?php echo $pago['Pago']['cobertura_total']; ?></td>
+	<td><?php echo $pago['Pago']['importe']; ?></td>
+	<td><?php echo $pago['Pago']['adeudo']; ?></td>
+	<td><?php echo $pago['Pago']['observaciones']; ?></td>
+	<td><?php echo $pago['Pago']['fecha']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('View','/pagos/view/' . $pago['Pago']['id'])?>
+		<?php echo $html->link('Edit','/pagos/edit/' . $pago['Pago']['id'])?>
+		<?php echo $html->link('Delete','/pagos/delete/' . $pago['Pago']['id'], null, 'Are you sure you want to delete id ' . $pago['Pago']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Pago', '/pagos/add'); ?></li>
+</ul>
+</div>

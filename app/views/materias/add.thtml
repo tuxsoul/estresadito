@@ -1,0 +1,19 @@
+<h2>New Materium</h2>
+<form action="<?php echo $html->url('/materias/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Materia/nombre', 'Nombre');?>
+ 	<?php echo $html->input('Materia/nombre', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Materia/nombre', 'Please enter the Nombre.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Maestro/Maestro', 'Related Maestros');?>
+ 	<?php echo $html->selectTag('Maestro/Maestro', $maestros, $selectedMaestros, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Maestro/Maestro', 'Please select the Related Maestros.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Add');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('List Materias', '/materias/index')?></li>
+</ul>

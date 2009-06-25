@@ -1,0 +1,26 @@
+<div class="generos">
+<h2>List Generos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Valor</th>
+	<th>Actions</th>
+</tr>
+<?php foreach ($generos as $genero): ?>
+<tr>
+	<td><?php echo $genero['Genero']['id']; ?></td>
+	<td><?php echo $genero['Genero']['valor']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('View','/generos/view/' . $genero['Genero']['id'])?>
+		<?php echo $html->link('Edit','/generos/edit/' . $genero['Genero']['id'])?>
+		<?php echo $html->link('Delete','/generos/delete/' . $genero['Genero']['id'], null, 'Are you sure you want to delete id ' . $genero['Genero']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Genero', '/generos/add'); ?></li>
+</ul>
+</div>

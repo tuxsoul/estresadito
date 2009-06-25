@@ -1,0 +1,16 @@
+<h2>Edit Nacionalidade</h2>
+<form action="<?php echo $html->url('/nacionalidades/edit/'.$html->tagValue('Nacionalidade/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Nacionalidade/valor', 'Valor');?>
+ 	<?php echo $html->input('Nacionalidade/valor', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Nacionalidade/valor', 'Please enter the Valor.');?>
+</div>
+<?php echo $html->hidden('Nacionalidade/id')?>
+<div class="submit">
+	<?php echo $html->submit('Save');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Delete','/nacionalidades/delete/' . $html->tagValue('Nacionalidade/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Nacionalidade/id'));?>
+<li><?php echo $html->link('List Nacionalidades', '/nacionalidades/index')?></li>
+</ul>

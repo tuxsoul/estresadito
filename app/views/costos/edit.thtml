@@ -1,0 +1,38 @@
+<h2>Edit Costo</h2>
+<form action="<?php echo $html->url('/costos/edit/'.$html->tagValue('Costo/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Costo/niveles_escolares_id', 'Niveles Escolares');?>
+ 	<?php echo $html->selectTag('Costo/niveles_escolares_id', $nivelesEscolares, $html->tagValue('Costo/niveles_escolares_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Costo/niveles_escolares_id', 'Please select the Niveles Escolares.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Costo/concepto', 'Concepto');?>
+ 	<?php echo $html->input('Costo/concepto', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Costo/concepto', 'Please enter the Concepto.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Costo/importe', 'Importe');?>
+ 	<?php echo $html->input('Costo/importe', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Costo/importe', 'Please enter the Importe.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Costo/descuento', 'Descuento');?>
+ 	<?php echo $html->input('Costo/descuento', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Costo/descuento', 'Please enter the Descuento.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Costo/descuento_porcentaje', 'Descuento Porcentaje');?>
+ 	<?php echo $html->input('Costo/descuento_porcentaje', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Costo/descuento_porcentaje', 'Please enter the Descuento Porcentaje.');?>
+</div>
+<?php echo $html->hidden('Costo/id')?>
+<div class="submit">
+	<?php echo $html->submit('Save');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Delete','/costos/delete/' . $html->tagValue('Costo/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Costo/id'));?>
+<li><?php echo $html->link('List Costos', '/costos/index')?></li>
+<li><?php echo $html->link('View Niveles Escolares', '/niveles_escolares/index/');?></li>
+<li><?php echo $html->link('Add Niveles Escolares', '/niveles_escolares/add/');?></li>
+</ul>

@@ -1,0 +1,26 @@
+<div class="statuses">
+<h2>List Statuses</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Valor</th>
+	<th>Actions</th>
+</tr>
+<?php foreach ($statuses as $status): ?>
+<tr>
+	<td><?php echo $status['Status']['id']; ?></td>
+	<td><?php echo $status['Status']['valor']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('View','/statuses/view/' . $status['Status']['id'])?>
+		<?php echo $html->link('Edit','/statuses/edit/' . $status['Status']['id'])?>
+		<?php echo $html->link('Delete','/statuses/delete/' . $status['Status']['id'], null, 'Are you sure you want to delete id ' . $status['Status']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Status', '/statuses/add'); ?></li>
+</ul>
+</div>

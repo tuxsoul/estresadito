@@ -1,0 +1,58 @@
+<div class="alumnos">
+<h2>List Alumnos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Niveles Escolares</th>
+	<th>Generos</th>
+	<th>Estados Civiles</th>
+	<th>Nacionalidades</th>
+	<th>Municipios Estados</th>
+	<th>Statuses</th>
+	<th>Clave</th>
+	<th>Nombre</th>
+	<th>Apellido Materno</th>
+	<th>Apellido Paterno</th>
+	<th>Nacimiento Fecha</th>
+	<th>Nacimiento Lugar</th>
+	<th>Nacimiento Estado</th>
+	<th>Curp</th>
+	<th>Domicilio Particular</th>
+	<th>Entre Calles</th>
+	<th>Codigo Postal</th>
+	<th>Actions</th>
+</tr>
+<?php foreach ($alumnos as $alumno): ?>
+<tr>
+	<td><?php echo $alumno['Alumno']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($alumno['']['id'], '/niveles_escolares/view/' .$alumno['']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($alumno['']['id'], '/generos/view/' .$alumno['']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($alumno['']['id'], '/estados_civiles/view/' .$alumno['']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($alumno['']['id'], '/nacionalidades/view/' .$alumno['']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($alumno['']['id'], '/municipios_estados/view/' .$alumno['']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($alumno['']['id'], '/statuses/view/' .$alumno['']['id'])?></td>
+	<td><?php echo $alumno['Alumno']['clave']; ?></td>
+	<td><?php echo $alumno['Alumno']['nombre']; ?></td>
+	<td><?php echo $alumno['Alumno']['apellido_materno']; ?></td>
+	<td><?php echo $alumno['Alumno']['apellido_paterno']; ?></td>
+	<td><?php echo $alumno['Alumno']['nacimiento_fecha']; ?></td>
+	<td><?php echo $alumno['Alumno']['nacimiento_lugar']; ?></td>
+	<td><?php echo $alumno['Alumno']['nacimiento_estado']; ?></td>
+	<td><?php echo $alumno['Alumno']['curp']; ?></td>
+	<td><?php echo $alumno['Alumno']['domicilio_particular']; ?></td>
+	<td><?php echo $alumno['Alumno']['entre_calles']; ?></td>
+	<td><?php echo $alumno['Alumno']['codigo_postal']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('View','/alumnos/view/' . $alumno['Alumno']['id'])?>
+		<?php echo $html->link('Edit','/alumnos/edit/' . $alumno['Alumno']['id'])?>
+		<?php echo $html->link('Delete','/alumnos/delete/' . $alumno['Alumno']['id'], null, 'Are you sure you want to delete id ' . $alumno['Alumno']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Alumno', '/alumnos/add'); ?></li>
+</ul>
+</div>

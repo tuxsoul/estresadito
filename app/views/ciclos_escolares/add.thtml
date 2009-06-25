@@ -1,0 +1,26 @@
+<h2>New Ciclos Escolare</h2>
+<form action="<?php echo $html->url('/ciclos_escolares/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('CiclosEscolare/niveles_escolares_id', 'Niveles Escolares');?>
+ 	<?php echo $html->selectTag('CiclosEscolare/niveles_escolares_id', $nivelesEscolares, $html->tagValue('CiclosEscolare/niveles_escolares_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('CiclosEscolare/niveles_escolares_id', 'Please select the Niveles Escolares.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('CiclosEscolare/inicio', 'Inicio');?>
+ 	<?php echo $html->input('CiclosEscolare/inicio', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('CiclosEscolare/inicio', 'Please enter the Inicio.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('CiclosEscolare/fin', 'Fin');?>
+ 	<?php echo $html->input('CiclosEscolare/fin', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('CiclosEscolare/fin', 'Please enter the Fin.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Add');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('List Ciclos Escolares', '/ciclos_escolares/index')?></li>
+<li><?php echo $html->link('View Niveles Escolares', '/niveles_escolares/index/');?></li>
+<li><?php echo $html->link('Add Niveles Escolares', '/niveles_escolares/add/');?></li>
+</ul>
