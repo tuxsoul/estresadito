@@ -1,16 +1,16 @@
-<h2>Edit Status</h2>
+<h2>Editar Status</h2>
 <form action="<?php echo $html->url('/statuses/edit/'.$html->tagValue('Status/id')); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('Status/valor', 'Valor');?>
+	<?php echo $form->labelTag('Status/valor', 'Concepto');?>
  	<?php echo $html->input('Status/valor', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Status/valor', 'Please enter the Valor.');?>
+	<?php echo $html->tagErrorMsg('Status/valor', 'Por favor ingresa el concepto.');?>
 </div>
 <?php echo $html->hidden('Status/id')?>
 <div class="submit">
-	<?php echo $html->submit('Save');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('Delete','/statuses/delete/' . $html->tagValue('Status/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Status/id'));?>
-<li><?php echo $html->link('List Statuses', '/statuses/index')?></li>
+<li><?php echo $html->link('Borrar','/statuses/delete/' . $html->tagValue('Status/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Status/id'));?>
+<li><?php echo $html->link('Regresar', '/statuses/index')?></li>
 </ul>
