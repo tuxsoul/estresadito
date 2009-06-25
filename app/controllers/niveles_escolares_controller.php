@@ -9,14 +9,6 @@ class NivelesEscolaresController extends AppController {
 		$this->set('nivelesEscolares', $this->NivelesEscolare->findAll());
 	}
 
-	function view($id = null) {
-		if (!$id) {
-			$this->Session->setFlash('Invalid id for Niveles Escolare.');
-			$this->redirect('/niveles_escolares/index');
-		}
-		$this->set('nivelesEscolare', $this->NivelesEscolare->read(null, $id));
-	}
-
 	function add() {
 		if (empty($this->data)) {
 			$this->render();

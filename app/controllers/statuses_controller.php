@@ -9,14 +9,6 @@ class StatusesController extends AppController {
 		$this->set('statuses', $this->Status->findAll());
 	}
 
-	function view($id = null) {
-		if (!$id) {
-			$this->Session->setFlash('Invalid id for Status.');
-			$this->redirect('/statuses/index');
-		}
-		$this->set('status', $this->Status->read(null, $id));
-	}
-
 	function add() {
 		if (empty($this->data)) {
 			$this->render();

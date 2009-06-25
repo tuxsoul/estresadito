@@ -12,7 +12,6 @@
 	<td><?php echo $nivelesEscolare['NivelesEscolare']['id']; ?></td>
 	<td><?php echo $nivelesEscolare['NivelesEscolare']['valor']; ?></td>
 	<td class="actions">
-		<?php echo $html->link('View','/niveles_escolares/view/' . $nivelesEscolare['NivelesEscolare']['id'])?>
 		<?php echo $html->link('Edit','/niveles_escolares/edit/' . $nivelesEscolare['NivelesEscolare']['id'])?>
 		<?php echo $html->link('Delete','/niveles_escolares/delete/' . $nivelesEscolare['NivelesEscolare']['id'], null, 'Are you sure you want to delete id ' . $nivelesEscolare['NivelesEscolare']['id'])?>
 	</td>

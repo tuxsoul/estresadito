@@ -9,14 +9,6 @@ class NacionalidadesController extends AppController {
 		$this->set('nacionalidades', $this->Nacionalidade->findAll());
 	}
 
-	function view($id = null) {
-		if (!$id) {
-			$this->Session->setFlash('Invalid id for Nacionalidade.');
-			$this->redirect('/nacionalidades/index');
-		}
-		$this->set('nacionalidade', $this->Nacionalidade->read(null, $id));
-	}
-
 	function add() {
 		if (empty($this->data)) {
 			$this->render();

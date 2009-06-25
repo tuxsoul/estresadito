@@ -16,7 +16,6 @@
 	<td><?php echo $municipiosEstado['MunicipiosEstado']['estado']; ?></td>
 	<td><?php echo $municipiosEstado['MunicipiosEstado']['codigo_postal']; ?></td>
 	<td class="actions">
-		<?php echo $html->link('View','/municipios_estados/view/' . $municipiosEstado['MunicipiosEstado']['id'])?>
 		<?php echo $html->link('Edit','/municipios_estados/edit/' . $municipiosEstado['MunicipiosEstado']['id'])?>
 		<?php echo $html->link('Delete','/municipios_estados/delete/' . $municipiosEstado['MunicipiosEstado']['id'], null, 'Are you sure you want to delete id ' . $municipiosEstado['MunicipiosEstado']['id'])?>
 	</td>

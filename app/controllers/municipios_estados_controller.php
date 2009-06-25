@@ -9,14 +9,6 @@ class MunicipiosEstadosController extends AppController {
 		$this->set('municipiosEstados', $this->MunicipiosEstado->findAll());
 	}
 
-	function view($id = null) {
-		if (!$id) {
-			$this->Session->setFlash('Invalid id for Municipios Estado.');
-			$this->redirect('/municipios_estados/index');
-		}
-		$this->set('municipiosEstado', $this->MunicipiosEstado->read(null, $id));
-	}
-
 	function add() {
 		if (empty($this->data)) {
 			$this->render();

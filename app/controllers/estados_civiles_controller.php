@@ -9,14 +9,6 @@ class EstadosCivilesController extends AppController {
 		$this->set('estadosCiviles', $this->EstadosCivile->findAll());
 	}
 
-	function view($id = null) {
-		if (!$id) {
-			$this->Session->setFlash('Invalid id for Estados Civile.');
-			$this->redirect('/estados_civiles/index');
-		}
-		$this->set('estadosCivile', $this->EstadosCivile->read(null, $id));
-	}
-
 	function add() {
 		if (empty($this->data)) {
 			$this->render();

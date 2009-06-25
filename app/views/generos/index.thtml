@@ -12,7 +12,6 @@
 	<td><?php echo $genero['Genero']['id']; ?></td>
 	<td><?php echo $genero['Genero']['valor']; ?></td>
 	<td class="actions">
-		<?php echo $html->link('View','/generos/view/' . $genero['Genero']['id'])?>
 		<?php echo $html->link('Edit','/generos/edit/' . $genero['Genero']['id'])?>
 		<?php echo $html->link('Delete','/generos/delete/' . $genero['Genero']['id'], null, 'Are you sure you want to delete id ' . $genero['Genero']['id'])?>
 	</td>
