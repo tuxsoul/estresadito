@@ -9,7 +9,7 @@
 --                      See http://tedia2sql.tigris.org/AUTHORS.html for tedia2sql author information
 -- 
 --   Target Database:   innodb
---   Generated at:      Mon Jun 22 23:09:13 2009
+--   Generated at:      Wed Jun 24 20:50:54 2009
 --   Input Files:       estresadito.dia
 -- 
 -- ================================================================================
@@ -20,7 +20,7 @@ set autocommit = 0 ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Mon Jun 22 23:09:12 2009
+--     Generated at:      Wed Jun 24 20:50:53 2009
 --     Input Files:       estresadito.dia
 
 -- alter table alumnos drop constraint alumnos_fk_Generos_id-- (is implicitly done)
@@ -28,7 +28,7 @@ set autocommit = 0 ;
 -- alter table alumnos drop constraint alumnos_fk_Nacionalidades_id-- (is implicitly done)
 -- alter table alumnos drop constraint alumnos_fk_Municipios_estados_id-- (is implicitly done)
 -- alter table alumnos_grupos drop constraint alumnos_grupos_fk_Alumnos_id-- (is implicitly done)
--- alter table alumnos drop constraint alumnos_fk_Status_id-- (is implicitly done)
+-- alter table alumnos drop constraint alumnos_fk_Statuses_id-- (is implicitly done)
 -- alter table ciclos_escolares drop constraint ciclos_escolares_fk_Niveles_escolares_id-- (is implicitly done)
 -- alter table maestros_materias drop constraint maestros_materias_fk_Materias_id-- (is implicitly done)
 -- alter table maestros_materias drop constraint maestros_materias_fk_Maestros_id-- (is implicitly done)
@@ -47,7 +47,7 @@ set autocommit = 0 ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Mon Jun 22 23:09:12 2009
+--     Generated at:      Wed Jun 24 20:50:53 2009
 --     Input Files:       estresadito.dia
 
 
@@ -57,7 +57,7 @@ set autocommit = 0 ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Mon Jun 22 23:09:12 2009
+--     Generated at:      Wed Jun 24 20:50:53 2009
 --     Input Files:       estresadito.dia
 
 
@@ -66,7 +66,7 @@ set autocommit = 0 ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Mon Jun 22 23:09:12 2009
+--     Generated at:      Wed Jun 24 20:50:53 2009
 --     Input Files:       estresadito.dia
 
  drop table if exists maestros ;
@@ -79,7 +79,7 @@ set autocommit = 0 ;
  drop table if exists nacionalidades ;
  drop table if exists municipios_estados ;
  drop table if exists grupos ;
- drop table if exists status ;
+ drop table if exists statuses ;
  drop table if exists materias ;
  drop table if exists ciclos_escolares ;
  drop table if exists maestros_materias ;
@@ -91,7 +91,7 @@ set autocommit = 0 ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Mon Jun 22 23:09:12 2009
+--     Generated at:      Wed Jun 24 20:50:53 2009
 --     Input Files:       estresadito.dia
 
 
@@ -112,7 +112,7 @@ create table alumnos (
   estados_civiles_id        int,
   nacionalidades_id         int,
   municipios_estados_id     int,
-  status_id                 int not null,
+  statuses_id               int not null,
   clave                     varchar(50),
   nombre                    varchar(20),
   apellido_materno          varchar(20),
@@ -199,11 +199,11 @@ create table grupos (
   constraint pk_Grupos primary key (id)
 ) type = InnoDB ;
 
--- status
-create table status (
+-- statuses
+create table statuses (
   id                        int auto_increment not null,
   valor                     varchar(20),
-  constraint pk_Status primary key (id)
+  constraint pk_Statuses primary key (id)
 ) type = InnoDB ;
 
 -- materias
@@ -237,6 +237,7 @@ create table calificaciones (
   id                        int auto_increment not null,
   alumnos_grupos_id         int not null,
   maestros_materias_id      int not null,
+  calificacion              float,
   constraint pk_Calificaciones primary key (id)
 ) type = InnoDB ;
 
@@ -269,7 +270,7 @@ create table alumnos_grupos (
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Mon Jun 22 23:09:12 2009
+--     Generated at:      Wed Jun 24 20:50:53 2009
 --     Input Files:       estresadito.dia
 
 
@@ -279,7 +280,7 @@ create table alumnos_grupos (
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Mon Jun 22 23:09:12 2009
+--     Generated at:      Wed Jun 24 20:50:53 2009
 --     Input Files:       estresadito.dia
 
 
@@ -288,7 +289,7 @@ create table alumnos_grupos (
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Mon Jun 22 23:09:12 2009
+--     Generated at:      Wed Jun 24 20:50:53 2009
 --     Input Files:       estresadito.dia
 
 
@@ -303,11 +304,11 @@ insert into estados_civiles (id, valor) values ( 3, 'Casado' ) ;
 insert into estados_civiles (id, valor) values ( 4, 'Divorciado' ) ;
 insert into estados_civiles (id, valor) values ( 5, 'Viudo' ) ;
 
--- inserts for status (id, valor)
-insert into status (id, valor) values ( 1, 'Ok' ) ;
-insert into status (id, valor) values ( 2, 'Baja' ) ;
-insert into status (id, valor) values ( 3, 'Suspendido' ) ;
-insert into status (id, valor) values ( 4, 'Expulsado' ) ;
+-- inserts for statuses (id, valor)
+insert into statuses (id, valor) values ( 1, 'Ok' ) ;
+insert into statuses (id, valor) values ( 2, 'Baja' ) ;
+insert into statuses (id, valor) values ( 3, 'Suspendido' ) ;
+insert into statuses (id, valor) values ( 4, 'Expulsado' ) ;
 
 -- inserts for niveles_escolares (id, valor)
 insert into niveles_escolares (id, valor) values ( 1, 'Primaria' ) ;
@@ -319,7 +320,7 @@ insert into niveles_escolares (id, valor) values ( 3, 'Preparatoria' ) ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Mon Jun 22 23:09:12 2009
+--     Generated at:      Wed Jun 24 20:50:53 2009
 --     Input Files:       estresadito.dia
 
 alter table alumnos add constraint alumnos_fk_Generos_id
@@ -337,9 +338,9 @@ alter table alumnos add constraint alumnos_fk_Municipios_estados_id
 alter table alumnos_grupos add constraint alumnos_grupos_fk_Alumnos_id
   foreign key (alumnos_id)
   references alumnos (id)  ;
-alter table alumnos add constraint alumnos_fk_Status_id
-  foreign key (status_id)
-  references status (id)  ;
+alter table alumnos add constraint alumnos_fk_Statuses_id
+  foreign key (statuses_id)
+  references statuses (id)  ;
 alter table ciclos_escolares add constraint ciclos_escolares_fk_Niveles_escolares_id
   foreign key (niveles_escolares_id)
   references niveles_escolares (id)  ;
