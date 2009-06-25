@@ -1,0 +1,36 @@
+body {
+	background-color: #f3f3f2;
+}
+
+#container {
+	background-color: #ffffff;
+	margin: 0 auto;
+	width: 700px;
+}
+
+#content {
+	background-color: #ffffff;
+	margin-bottom: 25px;
+}
+
+#header {
+	background-color: #ffce79;
+	padding: 10px;
+}
+
+#menu {
+
+}
+
+#menu a, #menu a:hover {
+	text-decoration: none;
+	font-weight: bold;
+	color: #cd9129;
+}
+
+#footer {
+	border-top: 1px dotted silver;
+	background-color: #ffffff;
+	text-align: center;
+	padding: 10px;
+}
