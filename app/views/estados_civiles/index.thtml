@@ -1,25 +1,23 @@
 <div class="estadosCiviles">
-<h2>List Estados Civiles</h2>
+<h2>Lista de Estados Civiles</h2>
 
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th>Id</th>
-	<th>Valor</th>
-	<th>Actions</th>
+	<th>Tipo</th>
+	<th>Acciones</th>
 </tr>
 <?php foreach ($estadosCiviles as $estadosCivile): ?>
 <tr>
-	<td><?php echo $estadosCivile['EstadosCivile']['id']; ?></td>
 	<td><?php echo $estadosCivile['EstadosCivile']['valor']; ?></td>
 	<td class="actions">
-		<?php echo $html->link('Edit','/estados_civiles/edit/' . $estadosCivile['EstadosCivile']['id'])?>
-		<?php echo $html->link('Delete','/estados_civiles/delete/' . $estadosCivile['EstadosCivile']['id'], null, 'Are you sure you want to delete id ' . $estadosCivile['EstadosCivile']['id'])?>
+		<?php echo $html->link('Editar','/estados_civiles/edit/' . $estadosCivile['EstadosCivile']['id'])?>
+		<?php echo $html->link('Borrar','/estados_civiles/delete/' . $estadosCivile['EstadosCivile']['id'], null, 'Are you sure you want to delete id ' . $estadosCivile['EstadosCivile']['id'])?>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
 
 <ul class="actions">
-	<li><?php echo $html->link('New Estados Civile', '/estados_civiles/add'); ?></li>
+	<li><?php echo $html->link('Nuevo Estado Civil', '/estados_civiles/add'); ?></li>
 </ul>
 </div>

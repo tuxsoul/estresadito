@@ -1,16 +1,16 @@
-<h2>Edit Estados Civile</h2>
+<h2>Editar Estado Civil</h2>
 <form action="<?php echo $html->url('/estados_civiles/edit/'.$html->tagValue('EstadosCivile/id')); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('EstadosCivile/valor', 'Valor');?>
+	<?php echo $form->labelTag('EstadosCivile/valor', 'Tipo');?>
  	<?php echo $html->input('EstadosCivile/valor', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('EstadosCivile/valor', 'Please enter the Valor.');?>
+	<?php echo $html->tagErrorMsg('EstadosCivile/valor', 'Por favor ingresa el tipo.');?>
 </div>
 <?php echo $html->hidden('EstadosCivile/id')?>
 <div class="submit">
-	<?php echo $html->submit('Save');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('Delete','/estados_civiles/delete/' . $html->tagValue('EstadosCivile/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('EstadosCivile/id'));?>
-<li><?php echo $html->link('List Estados Civiles', '/estados_civiles/index')?></li>
+<li><?php echo $html->link('Borrar','/estados_civiles/delete/' . $html->tagValue('EstadosCivile/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('EstadosCivile/id'));?>
+<li><?php echo $html->link('Regresar', '/estados_civiles/index')?></li>
 </ul>

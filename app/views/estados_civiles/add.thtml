@@ -1,14 +1,14 @@
-<h2>New Estados Civile</h2>
+<h2>Nuevo Estado Civil</h2>
 <form action="<?php echo $html->url('/estados_civiles/add'); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('EstadosCivile/valor', 'Valor');?>
+	<?php echo $form->labelTag('EstadosCivile/valor', 'Tipo');?>
  	<?php echo $html->input('EstadosCivile/valor', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('EstadosCivile/valor', 'Please enter the Valor.');?>
+	<?php echo $html->tagErrorMsg('EstadosCivile/valor', 'Por favor ingresa el tipo.');?>
 </div>
 <div class="submit">
-	<?php echo $html->submit('Add');?>
+	<?php echo $html->submit('Agregar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('List Estados Civiles', '/estados_civiles/index')?></li>
+<li><?php echo $html->link('Regresar', '/estados_civiles/index')?></li>
 </ul>
