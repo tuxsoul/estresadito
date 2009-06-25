@@ -1,14 +1,14 @@
-<h2>New Niveles Escolare</h2>
+<h2>Nuevo Nivel Escolar</h2>
 <form action="<?php echo $html->url('/niveles_escolares/add'); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('NivelesEscolare/valor', 'Valor');?>
+	<?php echo $form->labelTag('NivelesEscolare/valor', 'Tipo');?>
  	<?php echo $html->input('NivelesEscolare/valor', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('NivelesEscolare/valor', 'Please enter the Valor.');?>
+	<?php echo $html->tagErrorMsg('NivelesEscolare/valor', 'Por favor ingresa el tipo.');?>
 </div>
 <div class="submit">
-	<?php echo $html->submit('Add');?>
+	<?php echo $html->submit('Agregar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('List Niveles Escolares', '/niveles_escolares/index')?></li>
+<li><?php echo $html->link('Regresar', '/niveles_escolares/index')?></li>
 </ul>

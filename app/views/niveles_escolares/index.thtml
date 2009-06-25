@@ -1,25 +1,23 @@
 <div class="nivelesEscolares">
-<h2>List Niveles Escolares</h2>
+<h2>Lista de Niveles Escolares</h2>
 
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th>Id</th>
-	<th>Valor</th>
-	<th>Actions</th>
+	<th>Tipo</th>
+	<th>Acciones</th>
 </tr>
 <?php foreach ($nivelesEscolares as $nivelesEscolare): ?>
 <tr>
-	<td><?php echo $nivelesEscolare['NivelesEscolare']['id']; ?></td>
 	<td><?php echo $nivelesEscolare['NivelesEscolare']['valor']; ?></td>
 	<td class="actions">
-		<?php echo $html->link('Edit','/niveles_escolares/edit/' . $nivelesEscolare['NivelesEscolare']['id'])?>
-		<?php echo $html->link('Delete','/niveles_escolares/delete/' . $nivelesEscolare['NivelesEscolare']['id'], null, 'Are you sure you want to delete id ' . $nivelesEscolare['NivelesEscolare']['id'])?>
+		<?php echo $html->link('Editar','/niveles_escolares/edit/' . $nivelesEscolare['NivelesEscolare']['id'])?>
+		<?php echo $html->link('Borrar','/niveles_escolares/delete/' . $nivelesEscolare['NivelesEscolare']['id'], null, 'Are you sure you want to delete id ' . $nivelesEscolare['NivelesEscolare']['id'])?>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
 
 <ul class="actions">
-	<li><?php echo $html->link('New Niveles Escolare', '/niveles_escolares/add'); ?></li>
+	<li><?php echo $html->link('Nuevo Nivel Escolar', '/niveles_escolares/add'); ?></li>
 </ul>
 </div>
