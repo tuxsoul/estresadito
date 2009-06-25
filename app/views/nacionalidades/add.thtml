@@ -1,14 +1,14 @@
-<h2>New Nacionalidade</h2>
+<h2>Nueva Nacionalidad</h2>
 <form action="<?php echo $html->url('/nacionalidades/add'); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('Nacionalidade/valor', 'Valor');?>
+	<?php echo $form->labelTag('Nacionalidade/valor', 'Nacionalidad');?>
  	<?php echo $html->input('Nacionalidade/valor', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Nacionalidade/valor', 'Please enter the Valor.');?>
+	<?php echo $html->tagErrorMsg('Nacionalidade/valor', 'Por favor ingresa la Nacionalidad.');?>
 </div>
 <div class="submit">
-	<?php echo $html->submit('Add');?>
+	<?php echo $html->submit('Agregar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('List Nacionalidades', '/nacionalidades/index')?></li>
+<li><?php echo $html->link('Regresar', '/nacionalidades/index')?></li>
 </ul>
