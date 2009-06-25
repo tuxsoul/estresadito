@@ -19,8 +19,6 @@ class MateriasController extends AppController {
 
 	function add() {
 		if (empty($this->data)) {
-			$this->set('maestros', $this->Materia->Maestro->generateList());
-			$this->set('selectedMaestros', null);
 			$this->render();
 		} else {
 			$this->cleanUpFields();
@@ -29,9 +27,6 @@ class MateriasController extends AppController {
 				$this->redirect('/materias/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('maestros', $this->Materia->Maestro->generateList());
-				if (empty($this->data['Maestro']['Maestro'])) { $this->data['Maestro']['Maestro'] = null; }
-				$this->set('selectedMaestros', $this->data['Maestro']['Maestro']);
 			}
 		}
 	}
@@ -43,9 +38,6 @@ class MateriasController extends AppController {
 				$this->redirect('/materias/index');
 			}
 			$this->data = $this->Materia->read(null, $id);
-			$this->set('maestros', $this->Materia->Maestro->generateList());
-			if (empty($this->data['Maestro'])) { $this->data['Maestro'] = null; }
-			$this->set('selectedMaestros', $this->_selectedArray($this->data['Maestro']));
 		} else {
 			$this->cleanUpFields();
 			if ($this->Materia->save($this->data)) {
@@ -53,9 +45,6 @@ class MateriasController extends AppController {
 				$this->redirect('/materias/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('maestros', $this->Materia->Maestro->generateList());
-				if (empty($this->data['Maestro']['Maestro'])) { $this->data['Maestro']['Maestro'] = null; }
-				$this->set('selectedMaestros', $this->data['Maestro']['Maestro']);
 			}
 		}
 	}

@@ -1,21 +1,16 @@
-<h2>Edit Materium</h2>
+<h2>Editar Materia</h2>
 <form action="<?php echo $html->url('/materias/edit/'.$html->tagValue('Materia/id')); ?>" method="post">
 <div class="required"> 
 	<?php echo $form->labelTag('Materia/nombre', 'Nombre');?>
  	<?php echo $html->input('Materia/nombre', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Materia/nombre', 'Please enter the Nombre.');?>
-</div>
-<div class="optional"> 
-	<?php echo $form->labelTag('Maestro/Maestro', 'Related Maestros');?>
- 	<?php echo $html->selectTag('Maestro/Maestro', $maestros, $selectedMaestros, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
-	<?php echo $html->tagErrorMsg('Maestro/Maestro', 'Please select the Related Maestros.');?>
+	<?php echo $html->tagErrorMsg('Materia/nombre', 'Por favor ingresa el Nombre.');?>
 </div>
 <?php echo $html->hidden('Materia/id')?>
 <div class="submit">
-	<?php echo $html->submit('Save');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('Delete','/materias/delete/' . $html->tagValue('Materia/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Materia/id'));?>
-<li><?php echo $html->link('List Materias', '/materias/index')?></li>
+<li><?php echo $html->link('Borrar','/materias/delete/' . $html->tagValue('Materia/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Materia/id'));?>
+<li><?php echo $html->link('Regresar', '/materias/index')?></li>
 </ul>

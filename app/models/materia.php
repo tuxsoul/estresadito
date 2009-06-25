@@ -12,8 +12,8 @@ class Materia extends AppModel {
 			'Maestro' =>
 				array('className' => 'Maestro',
 						'joinTable' => 'maestros_materias',
-						'foreignKey' => 'materium_id',
-						'associationForeignKey' => 'maestro_id',
+						'foreignKey' => 'materias_id',
+						'associationForeignKey' => 'maestros_id',
 						'conditions' => '',
 						'fields' => '',
 						'order' => '',

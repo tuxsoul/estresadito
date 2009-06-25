@@ -1,23 +1,21 @@
 <div class="materium">
-<h2>View Materium</h2>
+<h2>Ver Materia</h2>
 
 <dl>
-	<dt>Id</dt>
-	<dd>&nbsp;<?php echo $materium['Materia']['id']?></dd>
 	<dt>Nombre</dt>
 	<dd>&nbsp;<?php echo $materium['Materia']['nombre']?></dd>
 </dl>
 <ul class="actions">
-	<li><?php echo $html->link('Edit Materium',   '/materias/edit/' . $materium['Materia']['id']) ?> </li>
-	<li><?php echo $html->link('Delete Materium', '/materias/delete/' . $materium['Materia']['id'], null, 'Are you sure you want to delete: id ' . $materium['Materia']['id'] . '?') ?> </li>
-	<li><?php echo $html->link('List Materias',   '/materias/index') ?> </li>
-	<li><?php echo $html->link('New Materium',	'/materias/add') ?> </li>
+	<li><?php echo $html->link('Editar Materia',   '/materias/edit/' . $materium['Materia']['id']) ?> </li>
+	<li><?php echo $html->link('Borrar Materia', '/materias/delete/' . $materium['Materia']['id'], null, 'Are you sure you want to delete: id ' . $materium['Materia']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Regresar',   '/materias/index') ?> </li>
 </ul>
 
 </div>
+
 <div class="related">
-<h3>Related Maestros</h3>
 <?php if (!empty($materium['Maestro'])):?>
+<h3>Maestros Asignados</h3>
 <table cellpadding="0" cellspacing="0">
 <tr>
 <?php foreach ($materium['Maestro']['0'] as $column => $value): ?>
@@ -38,9 +36,10 @@
 </tr>
 <?php endforeach; ?>
 </table>
-<?php endif; ?>
 
 <ul class="actions">
 	<li><?php echo $html->link('New Maestro', '/maestros/add/');?> </li>
 </ul>
+
+<?php endif; ?>
 </div>
