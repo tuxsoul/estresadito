@@ -1,24 +1,24 @@
-<h2>New Municipios Estado</h2>
+<h2>Nuevo Municipio y Estado</h2>
 <form action="<?php echo $html->url('/municipios_estados/add'); ?>" method="post">
 <div class="required"> 
 	<?php echo $form->labelTag('MunicipiosEstado/municipio', 'Municipio');?>
  	<?php echo $html->input('MunicipiosEstado/municipio', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('MunicipiosEstado/municipio', 'Please enter the Municipio.');?>
+	<?php echo $html->tagErrorMsg('MunicipiosEstado/municipio', 'Por favor ingresa el Municipio.');?>
 </div>
 <div class="required"> 
 	<?php echo $form->labelTag('MunicipiosEstado/estado', 'Estado');?>
  	<?php echo $html->input('MunicipiosEstado/estado', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('MunicipiosEstado/estado', 'Please enter the Estado.');?>
+	<?php echo $html->tagErrorMsg('MunicipiosEstado/estado', 'Por favor ingresa el Estado.');?>
 </div>
 <div class="required"> 
 	<?php echo $form->labelTag('MunicipiosEstado/codigo_postal', 'Codigo Postal');?>
  	<?php echo $html->input('MunicipiosEstado/codigo_postal', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('MunicipiosEstado/codigo_postal', 'Please enter the Codigo Postal.');?>
+	<?php echo $html->tagErrorMsg('MunicipiosEstado/codigo_postal', 'Por favor ingresa el Codigo Postal.');?>
 </div>
 <div class="submit">
-	<?php echo $html->submit('Add');?>
+	<?php echo $html->submit('Agregar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('List Municipios Estados', '/municipios_estados/index')?></li>
+<li><?php echo $html->link('Regresar', '/municipios_estados/index')?></li>
 </ul>

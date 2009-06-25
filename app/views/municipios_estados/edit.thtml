@@ -1,26 +1,26 @@
-<h2>Edit Municipios Estado</h2>
+<h2>Editar Municipios y Estados</h2>
 <form action="<?php echo $html->url('/municipios_estados/edit/'.$html->tagValue('MunicipiosEstado/id')); ?>" method="post">
 <div class="required"> 
 	<?php echo $form->labelTag('MunicipiosEstado/municipio', 'Municipio');?>
  	<?php echo $html->input('MunicipiosEstado/municipio', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('MunicipiosEstado/municipio', 'Please enter the Municipio.');?>
+	<?php echo $html->tagErrorMsg('MunicipiosEstado/municipio', 'Por favor ingresa el Municipio.');?>
 </div>
 <div class="required"> 
 	<?php echo $form->labelTag('MunicipiosEstado/estado', 'Estado');?>
  	<?php echo $html->input('MunicipiosEstado/estado', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('MunicipiosEstado/estado', 'Please enter the Estado.');?>
+	<?php echo $html->tagErrorMsg('MunicipiosEstado/estado', 'Por favor ingresa el Estado.');?>
 </div>
 <div class="required"> 
 	<?php echo $form->labelTag('MunicipiosEstado/codigo_postal', 'Codigo Postal');?>
  	<?php echo $html->input('MunicipiosEstado/codigo_postal', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('MunicipiosEstado/codigo_postal', 'Please enter the Codigo Postal.');?>
+	<?php echo $html->tagErrorMsg('MunicipiosEstado/codigo_postal', 'Por favor ingresa el Codigo Postal.');?>
 </div>
 <?php echo $html->hidden('MunicipiosEstado/id')?>
 <div class="submit">
-	<?php echo $html->submit('Save');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('Delete','/municipios_estados/delete/' . $html->tagValue('MunicipiosEstado/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('MunicipiosEstado/id'));?>
-<li><?php echo $html->link('List Municipios Estados', '/municipios_estados/index')?></li>
+<li><?php echo $html->link('Borrar','/municipios_estados/delete/' . $html->tagValue('MunicipiosEstado/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('MunicipiosEstado/id'));?>
+<li><?php echo $html->link('Regresar', '/municipios_estados/index')?></li>
 </ul>

@@ -1,29 +1,27 @@
 <div class="municipiosEstados">
-<h2>List Municipios Estados</h2>
+<h2>Lista de Municipios y Estados</h2>
 
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th>Id</th>
 	<th>Municipio</th>
 	<th>Estado</th>
 	<th>Codigo Postal</th>
-	<th>Actions</th>
+	<th>Acciones</th>
 </tr>
 <?php foreach ($municipiosEstados as $municipiosEstado): ?>
 <tr>
-	<td><?php echo $municipiosEstado['MunicipiosEstado']['id']; ?></td>
 	<td><?php echo $municipiosEstado['MunicipiosEstado']['municipio']; ?></td>
 	<td><?php echo $municipiosEstado['MunicipiosEstado']['estado']; ?></td>
 	<td><?php echo $municipiosEstado['MunicipiosEstado']['codigo_postal']; ?></td>
 	<td class="actions">
-		<?php echo $html->link('Edit','/municipios_estados/edit/' . $municipiosEstado['MunicipiosEstado']['id'])?>
-		<?php echo $html->link('Delete','/municipios_estados/delete/' . $municipiosEstado['MunicipiosEstado']['id'], null, 'Are you sure you want to delete id ' . $municipiosEstado['MunicipiosEstado']['id'])?>
+		<?php echo $html->link('Editar','/municipios_estados/edit/' . $municipiosEstado['MunicipiosEstado']['id'])?>
+		<?php echo $html->link('Borrar','/municipios_estados/delete/' . $municipiosEstado['MunicipiosEstado']['id'], null, 'Are you sure you want to delete id ' . $municipiosEstado['MunicipiosEstado']['id'])?>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
 
 <ul class="actions">
-	<li><?php echo $html->link('New Municipios Estado', '/municipios_estados/add'); ?></li>
+	<li><?php echo $html->link('Nuevo Municipio', '/municipios_estados/add'); ?></li>
 </ul>
 </div>
