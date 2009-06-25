@@ -1,9 +1,7 @@
 <div class="maestro">
-<h2>View Maestro</h2>
+<h2>Ver Maestro</h2>
 
 <dl>
-	<dt>Id</dt>
-	<dd>&nbsp;<?php echo $maestro['Maestro']['id']?></dd>
 	<dt>Nombre</dt>
 	<dd>&nbsp;<?php echo $maestro['Maestro']['nombre']?></dd>
 	<dt>Apellido Paterno</dt>
@@ -12,16 +10,16 @@
 	<dd>&nbsp;<?php echo $maestro['Maestro']['apellido_materno']?></dd>
 </dl>
 <ul class="actions">
-	<li><?php echo $html->link('Edit Maestro',   '/maestros/edit/' . $maestro['Maestro']['id']) ?> </li>
-	<li><?php echo $html->link('Delete Maestro', '/maestros/delete/' . $maestro['Maestro']['id'], null, 'Are you sure you want to delete: id ' . $maestro['Maestro']['id'] . '?') ?> </li>
-	<li><?php echo $html->link('List Maestros',   '/maestros/index') ?> </li>
-	<li><?php echo $html->link('New Maestro',	'/maestros/add') ?> </li>
+	<li><?php echo $html->link('Editar Maestro',   '/maestros/edit/' . $maestro['Maestro']['id']) ?> </li>
+	<li><?php echo $html->link('Borrar Maestro', '/maestros/delete/' . $maestro['Maestro']['id'], null, 'Are you sure you want to delete: id ' . $maestro['Maestro']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Regresar',   '/maestros/index') ?> </li>
 </ul>
-
 </div>
+
 <div class="related">
-<h3>Related Materias</h3>
 <?php if (!empty($maestro['Materia'])):?>
+
+<h3>Materias Asignadas</h3>
 <table cellpadding="0" cellspacing="0">
 <tr>
 <?php foreach ($maestro['Materia']['0'] as $column => $value): ?>
@@ -42,9 +40,10 @@
 </tr>
 <?php endforeach; ?>
 </table>
-<?php endif; ?>
 
 <ul class="actions">
-	<li><?php echo $html->link('New Materium', '/materia/add/');?> </li>
+	<li><?php echo $html->link('Asignar Materias', '/materias_maestros');?> </li>
 </ul>
+
+<?php endif; ?>
 </div>

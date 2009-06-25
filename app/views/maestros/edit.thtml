@@ -1,31 +1,26 @@
-<h2>Edit Maestro</h2>
+<h2>Editar Maestro</h2>
 <form action="<?php echo $html->url('/maestros/edit/'.$html->tagValue('Maestro/id')); ?>" method="post">
 <div class="required"> 
 	<?php echo $form->labelTag('Maestro/nombre', 'Nombre');?>
  	<?php echo $html->input('Maestro/nombre', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Maestro/nombre', 'Please enter the Nombre.');?>
+	<?php echo $html->tagErrorMsg('Maestro/nombre', 'Por favor ingresa el Nombre.');?>
 </div>
 <div class="required"> 
 	<?php echo $form->labelTag('Maestro/apellido_paterno', 'Apellido Paterno');?>
  	<?php echo $html->input('Maestro/apellido_paterno', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Maestro/apellido_paterno', 'Please enter the Apellido Paterno.');?>
+	<?php echo $html->tagErrorMsg('Maestro/apellido_paterno', 'Por favor ingresa el Apellido Paterno.');?>
 </div>
 <div class="required"> 
 	<?php echo $form->labelTag('Maestro/apellido_materno', 'Apellido Materno');?>
  	<?php echo $html->input('Maestro/apellido_materno', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Maestro/apellido_materno', 'Please enter the Apellido Materno.');?>
-</div>
-<div class="optional"> 
-	<?php echo $form->labelTag('Materia/Materia', 'Related Materias');?>
- 	<?php echo $html->selectTag('Materia/Materia', $materia, $selectedMateria, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
-	<?php echo $html->tagErrorMsg('Materia/Materia', 'Please select the Related Materias.');?>
+	<?php echo $html->tagErrorMsg('Maestro/apellido_materno', 'Por favor ingresa el Apellido Materno.');?>
 </div>
 <?php echo $html->hidden('Maestro/id')?>
 <div class="submit">
-	<?php echo $html->submit('Save');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('Delete','/maestros/delete/' . $html->tagValue('Maestro/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Maestro/id'));?>
-<li><?php echo $html->link('List Maestros', '/maestros/index')?></li>
+<li><?php echo $html->link('Borrar','/maestros/delete/' . $html->tagValue('Maestro/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Maestro/id'));?>
+<li><?php echo $html->link('Regresar', '/maestros/index')?></li>
 </ul>
