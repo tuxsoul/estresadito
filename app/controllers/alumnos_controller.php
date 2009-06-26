@@ -3,9 +3,10 @@ class AlumnosController extends AppController {
 
 	var $name = 'Alumnos';
 	var $helpers = array('Html', 'Form' );
+	var $components = 'Municipios';
 
 	function index() {
-		$this->Alumno->recursive = 0;
+		$this->Alumno->recursive = 2;
 		$this->set('alumnos', $this->Alumno->findAll());
 	}
 
@@ -14,19 +15,27 @@ class AlumnosController extends AppController {
 			$this->Session->setFlash('Invalid id for Alumno.');
 			$this->redirect('/alumnos/index');
 		}
-		$this->set('alumno', $this->Alumno->read(null, $id));
+		$this->Alumno->recursive = 2;
+
+		$tmp = $this->Alumno->read(null, $id);
+		$municipios = $this->Alumno->MunicipiosEstado->findAll();
+
+		$this->set('alumno', $tmp);
+		$this->set('nacimientoLugar', $this->Municipios->mostrar($tmp['Alumno']['municipios_estados_id'], $municipios));
+		$this->set('residenciaLugar', $this->Municipios->mostrar($tmp['Alumno']['nacimiento_lugar'], $municipios));
 	}
 
 	function add() {
 		if (empty($this->data)) {
-			$this->set('grupos', $this->Alumno->Grupo->generateList());
-			$this->set('selectedGrupos', null);
-			$this->set('nivelesEscolares', $this->Alumno->NivelesEscolare->generateList());
-			$this->set('generos', $this->Alumno->Genero->generateList());
-			$this->set('estadosCiviles', $this->Alumno->EstadosCivile->generateList());
-			$this->set('nacionalidades', $this->Alumno->Nacionalidade->generateList());
-			$this->set('municipiosEstados', $this->Alumno->MunicipiosEstado->generateList());
-			$this->set('statuses', $this->Alumno->Status->generateList());
+			$this->set('nivelesEscolares', $this->Alumno->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
+			$this->set('generos', $this->Alumno->Genero->generateList(null, null, null, '{n}.Genero.id', '{n}.Genero.valor'));
+			$this->set('estadosCiviles', $this->Alumno->EstadosCivile->generateList(null, null, null, '{n}.EstadosCivile.id', '{n}.EstadosCivile.valor'));
+			$this->set('nacionalidades', $this->Alumno->Nacionalidade->generateList(null, null, null, '{n}.Nacionalidade.id', '{n}.Nacionalidade.valor'));
+
+			$listaMunicipios = $this->Municipios->crearSelect($this->Alumno->MunicipiosEstado->findAll());
+			$this->set('municipiosEstados', $listaMunicipios);
+
+			$this->set('statuses', $this->Alumno->Status->generateList(null, null, null, '{n}.Status.id', '{n}.Status.valor'));
 			$this->render();
 		} else {
 			$this->cleanUpFields();
@@ -35,15 +44,15 @@ class AlumnosController extends AppController {
 				$this->redirect('/alumnos/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('grupos', $this->Alumno->Grupo->generateList());
-				if (empty($this->data['Grupo']['Grupo'])) { $this->data['Grupo']['Grupo'] = null; }
-				$this->set('selectedGrupos', $this->data['Grupo']['Grupo']);
-				$this->set('nivelesEscolares', $this->Alumno->NivelesEscolare->generateList());
-				$this->set('generos', $this->Alumno->Genero->generateList());
-				$this->set('estadosCiviles', $this->Alumno->EstadosCivile->generateList());
-				$this->set('nacionalidades', $this->Alumno->Nacionalidade->generateList());
-				$this->set('municipiosEstados', $this->Alumno->MunicipiosEstado->generateList());
-				$this->set('statuses', $this->Alumno->Status->generateList());
+				$this->set('nivelesEscolares', $this->Alumno->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
+				$this->set('generos', $this->Alumno->Genero->generateList(null, null, null, '{n}.Genero.id', '{n}.Genero.valor'));
+				$this->set('estadosCiviles', $this->Alumno->EstadosCivile->generateList(null, null, null, '{n}.EstadosCivile.id', '{n}.EstadosCivile.valor'));
+				$this->set('nacionalidades', $this->Alumno->Nacionalidade->generateList(null, null, null, '{n}.Nacionalidade.id', '{n}.Nacionalidade.valor'));
+
+				$listaMunicipios = $this->Municipios->crearSelect($this->Alumno->MunicipiosEstado->findAll());
+				$this->set('municipiosEstados', $listaMunicipios);
+
+				$this->set('statuses', $this->Alumno->Status->generateList(null, null, null, '{n}.Status.id', '{n}.Status.valor'));
 			}
 		}
 	}
@@ -55,15 +64,16 @@ class AlumnosController extends AppController {
 				$this->redirect('/alumnos/index');
 			}
 			$this->data = $this->Alumno->read(null, $id);
-			$this->set('grupos', $this->Alumno->Grupo->generateList());
-			if (empty($this->data['Grupo'])) { $this->data['Grupo'] = null; }
-			$this->set('selectedGrupos', $this->_selectedArray($this->data['Grupo']));
-			$this->set('nivelesEscolares', $this->Alumno->NivelesEscolare->generateList());
-			$this->set('generos', $this->Alumno->Genero->generateList());
-			$this->set('estadosCiviles', $this->Alumno->EstadosCivile->generateList());
-			$this->set('nacionalidades', $this->Alumno->Nacionalidade->generateList());
-			$this->set('municipiosEstados', $this->Alumno->MunicipiosEstado->generateList());
-			$this->set('statuses', $this->Alumno->Status->generateList());
+
+			$this->set('nivelesEscolares', $this->Alumno->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
+			$this->set('generos', $this->Alumno->Genero->generateList(null, null, null, '{n}.Genero.id', '{n}.Genero.valor'));
+			$this->set('estadosCiviles', $this->Alumno->EstadosCivile->generateList(null, null, null, '{n}.EstadosCivile.id', '{n}.EstadosCivile.valor'));
+			$this->set('nacionalidades', $this->Alumno->Nacionalidade->generateList(null, null, null, '{n}.Nacionalidade.id', '{n}.Nacionalidade.valor'));
+
+			$listaMunicipios = $this->Municipios->crearSelect($this->Alumno->MunicipiosEstado->findAll());
+			$this->set('municipiosEstados', $listaMunicipios);
+
+			$this->set('statuses', $this->Alumno->Status->generateList(null, null, null, '{n}.Status.id', '{n}.Status.valor'));
 		} else {
 			$this->cleanUpFields();
 			if ($this->Alumno->save($this->data)) {
@@ -71,15 +81,16 @@ class AlumnosController extends AppController {
 				$this->redirect('/alumnos/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('grupos', $this->Alumno->Grupo->generateList());
-				if (empty($this->data['Grupo']['Grupo'])) { $this->data['Grupo']['Grupo'] = null; }
-				$this->set('selectedGrupos', $this->data['Grupo']['Grupo']);
-				$this->set('nivelesEscolares', $this->Alumno->NivelesEscolare->generateList());
-				$this->set('generos', $this->Alumno->Genero->generateList());
-				$this->set('estadosCiviles', $this->Alumno->EstadosCivile->generateList());
-				$this->set('nacionalidades', $this->Alumno->Nacionalidade->generateList());
-				$this->set('municipiosEstados', $this->Alumno->MunicipiosEstado->generateList());
-				$this->set('statuses', $this->Alumno->Status->generateList());
+
+				$this->set('nivelesEscolares', $this->Alumno->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
+				$this->set('generos', $this->Alumno->Genero->generateList(null, null, null, '{n}.Genero.id', '{n}.Genero.valor'));
+				$this->set('estadosCiviles', $this->Alumno->EstadosCivile->generateList(null, null, null, '{n}.EstadosCivile.id', '{n}.EstadosCivile.valor'));
+				$this->set('nacionalidades', $this->Alumno->Nacionalidade->generateList(null, null, null, '{n}.Nacionalidade.id', '{n}.Nacionalidade.valor'));
+
+				$listaMunicipios = $this->Municipios->crearSelect($this->Alumno->MunicipiosEstado->findAll());
+				$this->set('municipiosEstados', $listaMunicipios);
+
+				$this->set('statuses', $this->Alumno->Status->generateList(null, null, null, '{n}.Status.id', '{n}.Status.valor'));
 			}
 		}
 	}

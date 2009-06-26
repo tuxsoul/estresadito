@@ -91,8 +91,8 @@ class Alumno extends AppModel {
 			'Grupo' =>
 				array('className' => 'Grupo',
 						'joinTable' => 'alumnos_grupos',
-						'foreignKey' => 'alumno_id',
-						'associationForeignKey' => 'grupo_id',
+						'foreignKey' => 'alumnos_id',
+						'associationForeignKey' => 'grupos_id',
 						'conditions' => '',
 						'fields' => '',
 						'order' => '',

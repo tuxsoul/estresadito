@@ -1,67 +1,50 @@
 <div class="alumno">
-<h2>View Alumno</h2>
+<h2>Ver Alumno</h2>
 
 <dl>
-	<dt>Id</dt>
-	<dd>&nbsp;<?php echo $alumno['Alumno']['id']?></dd>
-	<dt>Niveles Escolares</dt>
-	<dd>&nbsp;<?php echo $html->link($alumno['']['id'], '/niveles_escolares/view/' .$alumno['']['id'])?></dd>
-	<dt>Generos</dt>
-	<dd>&nbsp;<?php echo $html->link($alumno['']['id'], '/generos/view/' .$alumno['']['id'])?></dd>
-	<dt>Estados Civiles</dt>
-	<dd>&nbsp;<?php echo $html->link($alumno['']['id'], '/estados_civiles/view/' .$alumno['']['id'])?></dd>
-	<dt>Nacionalidades</dt>
-	<dd>&nbsp;<?php echo $html->link($alumno['']['id'], '/nacionalidades/view/' .$alumno['']['id'])?></dd>
-	<dt>Municipios Estados</dt>
-	<dd>&nbsp;<?php echo $html->link($alumno['']['id'], '/municipios_estados/view/' .$alumno['']['id'])?></dd>
-	<dt>Statuses</dt>
-	<dd>&nbsp;<?php echo $html->link($alumno['']['id'], '/statuses/view/' .$alumno['']['id'])?></dd>
 	<dt>Clave</dt>
 	<dd>&nbsp;<?php echo $alumno['Alumno']['clave']?></dd>
-	<dt>Nombre</dt>
-	<dd>&nbsp;<?php echo $alumno['Alumno']['nombre']?></dd>
-	<dt>Apellido Materno</dt>
-	<dd>&nbsp;<?php echo $alumno['Alumno']['apellido_materno']?></dd>
-	<dt>Apellido Paterno</dt>
-	<dd>&nbsp;<?php echo $alumno['Alumno']['apellido_paterno']?></dd>
-	<dt>Nacimiento Fecha</dt>
-	<dd>&nbsp;<?php echo $alumno['Alumno']['nacimiento_fecha']?></dd>
-	<dt>Nacimiento Lugar</dt>
-	<dd>&nbsp;<?php echo $alumno['Alumno']['nacimiento_lugar']?></dd>
-	<dt>Nacimiento Estado</dt>
-	<dd>&nbsp;<?php echo $alumno['Alumno']['nacimiento_estado']?></dd>
 	<dt>Curp</dt>
 	<dd>&nbsp;<?php echo $alumno['Alumno']['curp']?></dd>
+	<dt>Nombre</dt>
+	<dd>&nbsp;<?php echo $alumno['Alumno']['nombre']?></dd>
+	<dt>Apellido Paterno</dt>
+	<dd>&nbsp;<?php echo $alumno['Alumno']['apellido_paterno']?></dd>
+	<dt>Apellido Materno</dt>
+	<dd>&nbsp;<?php echo $alumno['Alumno']['apellido_materno']?></dd>
+	<dt>Genero</dt>
+	<dd>&nbsp;<?php echo $alumno['Genero']['valor']?></dd>
+	<dt>Estado Civil</dt>
+	<dd>&nbsp;<?php echo $alumno['EstadosCivile']['valor']?></dd>
+	<dt>Nacionalidad</dt>
+	<dd>&nbsp;<?php echo $alumno['Nacionalidade']['valor']?></dd>
+	<dt>Lugar de Residencia</dt>
+	<dd>&nbsp;<?php echo $residenciaLugar?></dd>
+	<dt>Fecha de Nacimiento</dt>
+	<dd>&nbsp;<?php echo $alumno['Alumno']['nacimiento_fecha']?></dd>
+	<dt>Lugar de Nacimiento</dt>
+	<dd>&nbsp;<?php echo $nacimientoLugar?></dd>
 	<dt>Domicilio Particular</dt>
 	<dd>&nbsp;<?php echo $alumno['Alumno']['domicilio_particular']?></dd>
 	<dt>Entre Calles</dt>
 	<dd>&nbsp;<?php echo $alumno['Alumno']['entre_calles']?></dd>
 	<dt>Codigo Postal</dt>
 	<dd>&nbsp;<?php echo $alumno['Alumno']['codigo_postal']?></dd>
+	<dt>Nivel Escolar</dt>
+	<dd>&nbsp;<?php echo $alumno['NivelesEscolare']['valor']?></dd>
+	<dt>Status</dt>
+	<dd>&nbsp;<?php echo $alumno['Status']['valor']?></dd>
 </dl>
 <ul class="actions">
-	<li><?php echo $html->link('Edit Alumno',   '/alumnos/edit/' . $alumno['Alumno']['id']) ?> </li>
-	<li><?php echo $html->link('Delete Alumno', '/alumnos/delete/' . $alumno['Alumno']['id'], null, 'Are you sure you want to delete: id ' . $alumno['Alumno']['id'] . '?') ?> </li>
-	<li><?php echo $html->link('List Alumnos',   '/alumnos/index') ?> </li>
-	<li><?php echo $html->link('New Alumno',	'/alumnos/add') ?> </li>
-	<li><?php echo $html->link('List Niveles Escolare', '/niveles_escolares/index/')?> </li>
-	<li><?php echo $html->link('New Niveles Escolares', '/niveles_escolares/add/')?> </li>
-	<li><?php echo $html->link('List Genero', '/generos/index/')?> </li>
-	<li><?php echo $html->link('New Generos', '/generos/add/')?> </li>
-	<li><?php echo $html->link('List Estados Civile', '/estados_civiles/index/')?> </li>
-	<li><?php echo $html->link('New Estados Civiles', '/estados_civiles/add/')?> </li>
-	<li><?php echo $html->link('List Nacionalidade', '/nacionalidades/index/')?> </li>
-	<li><?php echo $html->link('New Nacionalidades', '/nacionalidades/add/')?> </li>
-	<li><?php echo $html->link('List Municipios Estado', '/municipios_estados/index/')?> </li>
-	<li><?php echo $html->link('New Municipios Estados', '/municipios_estados/add/')?> </li>
-	<li><?php echo $html->link('List Status', '/statuses/index/')?> </li>
-	<li><?php echo $html->link('New Statuses', '/statuses/add/')?> </li>
+	<li><?php echo $html->link('Editar Alumno',   '/alumnos/edit/' . $alumno['Alumno']['id']) ?> </li>
+	<li><?php echo $html->link('Borrar Alumno', '/alumnos/delete/' . $alumno['Alumno']['id'], null, 'Are you sure you want to delete: id ' . $alumno['Alumno']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Regresar',   '/alumnos/index') ?> </li>
 </ul>
-
 </div>
+
 <div class="related">
-<h3>Related Pagos</h3>
 <?php if (!empty($alumno['Pago'])):?>
+<h3>Pagos relacionados</h3>
 <table cellpadding="0" cellspacing="0">
 <tr>
 <?php foreach ($alumno['Pago']['0'] as $column => $value): ?>
@@ -82,15 +65,17 @@
 </tr>
 <?php endforeach; ?>
 </table>
-<?php endif; ?>
 
 <ul class="actions">
 	<li><?php echo $html->link('New Pago', '/pagos/add/');?> </li>
 </ul>
+
+<?php endif; ?>
 </div>
+
 <div class="related">
-<h3>Related Grupos</h3>
 <?php if (!empty($alumno['Grupo'])):?>
+<h3>Grupos relacionados</h3>
 <table cellpadding="0" cellspacing="0">
 <tr>
 <?php foreach ($alumno['Grupo']['0'] as $column => $value): ?>
@@ -111,9 +96,10 @@
 </tr>
 <?php endforeach; ?>
 </table>
-<?php endif; ?>
 
 <ul class="actions">
 	<li><?php echo $html->link('New Grupo', '/grupos/add/');?> </li>
 </ul>
+
+<?php endif; ?>
 </div>

@@ -1,113 +1,96 @@
-<h2>Edit Alumno</h2>
+<h2>Editar Alumno</h2>
 <form action="<?php echo $html->url('/alumnos/edit/'.$html->tagValue('Alumno/id')); ?>" method="post">
-<div class="required"> 
-	<?php echo $form->labelTag('Alumno/niveles_escolares_id', 'Niveles Escolares');?>
- 	<?php echo $html->selectTag('Alumno/niveles_escolares_id', $nivelesEscolares, $html->tagValue('Alumno/niveles_escolares_id'), array(), array(), false);?>
-	<?php echo $html->tagErrorMsg('Alumno/niveles_escolares_id', 'Please select the Niveles Escolares.') ?>
-</div>
-<div class="required"> 
-	<?php echo $form->labelTag('Alumno/generos_id', 'Generos');?>
- 	<?php echo $html->selectTag('Alumno/generos_id', $generos, $html->tagValue('Alumno/generos_id'), array(), array(), false);?>
-	<?php echo $html->tagErrorMsg('Alumno/generos_id', 'Please select the Generos.') ?>
-</div>
-<div class="optional"> 
-	<?php echo $form->labelTag('Alumno/estados_civiles_id', 'Estados Civiles');?>
- 	<?php echo $html->selectTag('Alumno/estados_civiles_id', $estadosCiviles, $html->tagValue('Alumno/estados_civiles_id'), array(), array(), true);?>
-	<?php echo $html->tagErrorMsg('Alumno/estados_civiles_id', 'Please select the Estados Civiles.') ?>
-</div>
-<div class="optional"> 
-	<?php echo $form->labelTag('Alumno/nacionalidades_id', 'Nacionalidades');?>
- 	<?php echo $html->selectTag('Alumno/nacionalidades_id', $nacionalidades, $html->tagValue('Alumno/nacionalidades_id'), array(), array(), true);?>
-	<?php echo $html->tagErrorMsg('Alumno/nacionalidades_id', 'Please select the Nacionalidades.') ?>
-</div>
-<div class="optional"> 
-	<?php echo $form->labelTag('Alumno/municipios_estados_id', 'Municipios Estados');?>
- 	<?php echo $html->selectTag('Alumno/municipios_estados_id', $municipiosEstados, $html->tagValue('Alumno/municipios_estados_id'), array(), array(), true);?>
-	<?php echo $html->tagErrorMsg('Alumno/municipios_estados_id', 'Please select the Municipios Estados.') ?>
-</div>
-<div class="required"> 
-	<?php echo $form->labelTag('Alumno/statuses_id', 'Statuses');?>
- 	<?php echo $html->selectTag('Alumno/statuses_id', $statuses, $html->tagValue('Alumno/statuses_id'), array(), array(), false);?>
-	<?php echo $html->tagErrorMsg('Alumno/statuses_id', 'Please select the Statuses.') ?>
-</div>
 <div class="optional"> 
 	<?php echo $form->labelTag('Alumno/clave', 'Clave');?>
  	<?php echo $html->input('Alumno/clave', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Alumno/clave', 'Please enter the Clave.');?>
-</div>
-<div class="required"> 
-	<?php echo $form->labelTag('Alumno/nombre', 'Nombre');?>
- 	<?php echo $html->input('Alumno/nombre', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Alumno/nombre', 'Please enter the Nombre.');?>
-</div>
-<div class="required"> 
-	<?php echo $form->labelTag('Alumno/apellido_materno', 'Apellido Materno');?>
- 	<?php echo $html->input('Alumno/apellido_materno', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Alumno/apellido_materno', 'Please enter the Apellido Materno.');?>
-</div>
-<div class="required"> 
-	<?php echo $form->labelTag('Alumno/apellido_paterno', 'Apellido Paterno');?>
- 	<?php echo $html->input('Alumno/apellido_paterno', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Alumno/apellido_paterno', 'Please enter the Apellido Paterno.');?>
-</div>
-<div class="optional"> 
-	<?php echo $form->labelTag('Alumno/nacimiento_fecha', 'Nacimiento Fecha');?>
- 	<?php echo $html->dateTimeOptionTag('Alumno/nacimiento_fecha', 'MDY' , 'NONE', $html->tagValue('Alumno/nacimiento_fecha'), array());?>
-	<?php echo $html->tagErrorMsg('Alumno/nacimiento_fecha', 'Please select the Nacimiento Fecha.');?>
-</div>
-<div class="optional"> 
-	<?php echo $form->labelTag('Alumno/nacimiento_lugar', 'Nacimiento Lugar');?>
- 	<?php echo $html->input('Alumno/nacimiento_lugar', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Alumno/nacimiento_lugar', 'Please enter the Nacimiento Lugar.');?>
-</div>
-<div class="optional"> 
-	<?php echo $form->labelTag('Alumno/nacimiento_estado', 'Nacimiento Estado');?>
- 	<?php echo $html->input('Alumno/nacimiento_estado', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Alumno/nacimiento_estado', 'Please enter the Nacimiento Estado.');?>
+	<?php echo $html->tagErrorMsg('Alumno/clave', 'Por favor ingresa la Clave.');?>
 </div>
 <div class="optional"> 
 	<?php echo $form->labelTag('Alumno/curp', 'Curp');?>
  	<?php echo $html->input('Alumno/curp', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Alumno/curp', 'Please enter the Curp.');?>
+	<?php echo $html->tagErrorMsg('Alumno/curp', 'Por favor ingresa el Curp.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Alumno/nombre', 'Nombre');?>
+ 	<?php echo $html->input('Alumno/nombre', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Alumno/nombre', 'Por favor ingresa el Nombre.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Alumno/apellido_paterno', 'Apellido Paterno');?>
+ 	<?php echo $html->input('Alumno/apellido_paterno', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Alumno/apellido_paterno', 'Por favor ingresa el Apellido Paterno.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Alumno/apellido_materno', 'Apellido Materno');?>
+ 	<?php echo $html->input('Alumno/apellido_materno', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Alumno/apellido_materno', 'Por favor ingresa el Apellido Materno.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Alumno/generos_id', 'Genero');?>
+ 	<?php echo $html->selectTag('Alumno/generos_id', $generos, $html->tagValue('Alumno/generos_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Alumno/generos_id', 'Por favor especifica el Genero.') ?>
+	<p class="actions"><?php echo $html->link('Agregar Genero', '/generos/add/');?></p>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Alumno/estados_civiles_id', 'Estado Civil');?>
+ 	<?php echo $html->selectTag('Alumno/estados_civiles_id', $estadosCiviles, $html->tagValue('Alumno/estados_civiles_id'), array(), array(), true);?>
+	<?php echo $html->tagErrorMsg('Alumno/estados_civiles_id', 'Por favor selecciona el Estado Civil.') ?>
+	<p class="actions"><?php echo $html->link('Agregar Estado Civil', '/estados_civiles/add/');?></p>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Alumno/nacionalidades_id', 'Nacionalidad');?>
+ 	<?php echo $html->selectTag('Alumno/nacionalidades_id', $nacionalidades, $html->tagValue('Alumno/nacionalidades_id'), array(), array(), true);?>
+	<?php echo $html->tagErrorMsg('Alumno/nacionalidades_id', 'Por favor selecciona la Nacionalidade.') ?>
+	<p class="actions"><?php echo $html->link('Agregar Nacionalidad', '/nacionalidades/add/');?></p>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Alumno/municipios_estados_id', 'Lugar de Residencia');?>
+ 	<?php echo $html->selectTag('Alumno/municipios_estados_id', $municipiosEstados, $html->tagValue('Alumno/municipios_estados_id'), array(), array(), true);?>
+	<?php echo $html->tagErrorMsg('Alumno/municipios_estados_id', 'Por favor selecciona el Lugar de Residencia.') ?>
+	<p class="actions"><?php echo $html->link('Agregar Municipios y Estados', '/municipios_estados/add/');?></p>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Alumno/nacimiento_fecha', 'Fecha de Nacimiento');?>
+ 	<?php echo $html->dateTimeOptionTag('Alumno/nacimiento_fecha', 'MDY' , 'NONE', $html->tagValue('Alumno/nacimiento_fecha'), array());?>
+	<?php echo $html->tagErrorMsg('Alumno/nacimiento_fecha', 'Por favor selecciona la Fecha de Nacimiento.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Alumno/nacimiento_lugar', 'Lugar de Nacimiento');?>
+ 	<?php echo $html->selectTag('Alumno/nacimiento_lugar', $municipiosEstados, $html->tagValue('Alumno/nacimiento_lugar'), array(), array(), true);?>
+	<?php echo $html->tagErrorMsg('Alumno/nacimiento_lugar', 'Por favor ingresa el Lugar de Nacimiento.');?>
+	<p class="actions"><?php echo $html->link('Agregar Municipios y Estados', '/municipios_estados/add/');?></p>
 </div>
 <div class="optional"> 
 	<?php echo $form->labelTag('Alumno/domicilio_particular', 'Domicilio Particular');?>
  	<?php echo $html->input('Alumno/domicilio_particular', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Alumno/domicilio_particular', 'Please enter the Domicilio Particular.');?>
+	<?php echo $html->tagErrorMsg('Alumno/domicilio_particular', 'Por favor ingresa el Domicilio Particular.');?>
 </div>
 <div class="optional"> 
 	<?php echo $form->labelTag('Alumno/entre_calles', 'Entre Calles');?>
  	<?php echo $html->input('Alumno/entre_calles', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Alumno/entre_calles', 'Please enter the Entre Calles.');?>
+	<?php echo $html->tagErrorMsg('Alumno/entre_calles', 'Por favor especifica entre entre que calles.');?>
 </div>
 <div class="optional"> 
 	<?php echo $form->labelTag('Alumno/codigo_postal', 'Codigo Postal');?>
  	<?php echo $html->input('Alumno/codigo_postal', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Alumno/codigo_postal', 'Please enter the Codigo Postal.');?>
+	<?php echo $html->tagErrorMsg('Alumno/codigo_postal', 'Por favor ingresa el Codigo Postal.');?>
 </div>
-<div class="optional"> 
-	<?php echo $form->labelTag('Grupo/Grupo', 'Related Grupos');?>
- 	<?php echo $html->selectTag('Grupo/Grupo', $grupos, $selectedGrupos, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
-	<?php echo $html->tagErrorMsg('Grupo/Grupo', 'Please select the Related Grupos.');?>
+<div class="required"> 
+	<?php echo $form->labelTag('Alumno/niveles_escolares_id', 'Nivel Escolar');?>
+ 	<?php echo $html->selectTag('Alumno/niveles_escolares_id', $nivelesEscolares, $html->tagValue('Alumno/niveles_escolares_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Alumno/niveles_escolares_id', 'Por favor selecciona el Nivel Escolar.') ?>
+	<p class="actions"><?php echo $html->link('Agregar Nivel Escolar', '/niveles_escolares/add/');?></p>
 </div>
-<?php echo $html->hidden('Alumno/id')?>
+<div class="required"> 
+	<?php echo $form->labelTag('Alumno/statuses_id', 'Status');?>
+ 	<?php echo $html->selectTag('Alumno/statuses_id', $statuses, $html->tagValue('Alumno/statuses_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Alumno/statuses_id', 'Por favor selecciona el Status.') ?>
+	<p class="actions"><?php echo $html->link('Agregar Status', '/statuses/add/');?></p>
+</div>
 <div class="submit">
-	<?php echo $html->submit('Save');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('Delete','/alumnos/delete/' . $html->tagValue('Alumno/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Alumno/id'));?>
-<li><?php echo $html->link('List Alumnos', '/alumnos/index')?></li>
-<li><?php echo $html->link('View Niveles Escolares', '/niveles_escolares/index/');?></li>
-<li><?php echo $html->link('Add Niveles Escolares', '/niveles_escolares/add/');?></li>
-<li><?php echo $html->link('View Generos', '/generos/index/');?></li>
-<li><?php echo $html->link('Add Generos', '/generos/add/');?></li>
-<li><?php echo $html->link('View Estados Civiles', '/estados_civiles/index/');?></li>
-<li><?php echo $html->link('Add Estados Civiles', '/estados_civiles/add/');?></li>
-<li><?php echo $html->link('View Nacionalidades', '/nacionalidades/index/');?></li>
-<li><?php echo $html->link('Add Nacionalidades', '/nacionalidades/add/');?></li>
-<li><?php echo $html->link('View Municipios Estados', '/municipios_estados/index/');?></li>
-<li><?php echo $html->link('Add Municipios Estados', '/municipios_estados/add/');?></li>
-<li><?php echo $html->link('View Statuses', '/statuses/index/');?></li>
-<li><?php echo $html->link('Add Statuses', '/statuses/add/');?></li>
+	<li><?php echo $html->link('Regresar', '/alumnos/index')?></li>
 </ul>
