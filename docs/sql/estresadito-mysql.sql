@@ -9,7 +9,7 @@
 --                      See http://tedia2sql.tigris.org/AUTHORS.html for tedia2sql author information
 -- 
 --   Target Database:   innodb
---   Generated at:      Thu Jun 25 18:02:46 2009
+--   Generated at:      Fri Jun 26 01:56:27 2009
 --   Input Files:       estresadito.dia
 -- 
 -- ================================================================================
@@ -20,7 +20,7 @@ set autocommit = 0 ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:45 2009
+--     Generated at:      Fri Jun 26 01:56:26 2009
 --     Input Files:       estresadito.dia
 
 -- alter table alumnos drop constraint alumnos_fk_Generos_id-- (is implicitly done)
@@ -47,7 +47,7 @@ set autocommit = 0 ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:45 2009
+--     Generated at:      Fri Jun 26 01:56:26 2009
 --     Input Files:       estresadito.dia
 
 
@@ -57,7 +57,7 @@ set autocommit = 0 ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:45 2009
+--     Generated at:      Fri Jun 26 01:56:26 2009
 --     Input Files:       estresadito.dia
 
 
@@ -66,7 +66,7 @@ set autocommit = 0 ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:45 2009
+--     Generated at:      Fri Jun 26 01:56:26 2009
 --     Input Files:       estresadito.dia
 
  drop table if exists maestros ;
@@ -91,7 +91,7 @@ set autocommit = 0 ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:45 2009
+--     Generated at:      Fri Jun 26 01:56:26 2009
 --     Input Files:       estresadito.dia
 
 
@@ -135,7 +135,7 @@ create table generos (
 
 -- pagos
 create table pagos (
-  id                        int not null,
+  id                        int auto_increment not null,
   alumnos_id                int not null,
   costos_id                 int not null,
   cobertura_inicial         date,
@@ -154,8 +154,8 @@ create table costos (
   niveles_escolares_id      int not null,
   concepto                  varchar(50),
   importe                   float,
-  descuento                 int(1),
-  descuento_porcentaje      int(1),
+  descuento                 bool,
+  descuento_porcentaje      bool,
   constraint pk_Costos primary key (id)
 ) type = InnoDB ;
 
@@ -269,7 +269,7 @@ create table alumnos_grupos (
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:45 2009
+--     Generated at:      Fri Jun 26 01:56:26 2009
 --     Input Files:       estresadito.dia
 
 
@@ -279,7 +279,7 @@ create table alumnos_grupos (
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:45 2009
+--     Generated at:      Fri Jun 26 01:56:26 2009
 --     Input Files:       estresadito.dia
 
 
@@ -288,7 +288,7 @@ create table alumnos_grupos (
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:45 2009
+--     Generated at:      Fri Jun 26 01:56:26 2009
 --     Input Files:       estresadito.dia
 
 
@@ -319,7 +319,7 @@ insert into niveles_escolares (id, valor) values ( 3, 'Preparatoria' ) ;
 -- --------------------------------------------------------------------
 --     Target Database:   innodb
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:45 2009
+--     Generated at:      Fri Jun 26 01:56:26 2009
 --     Input Files:       estresadito.dia
 
 alter table alumnos add constraint alumnos_fk_Generos_id

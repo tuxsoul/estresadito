@@ -9,7 +9,7 @@
 --                      See http://tedia2sql.tigris.org/AUTHORS.html for tedia2sql author information
 -- 
 --   Target Database:   postgres
---   Generated at:      Thu Jun 25 18:02:59 2009
+--   Generated at:      Fri Jun 26 01:55:22 2009
 --   Input Files:       estresadito.dia
 -- 
 -- ================================================================================
@@ -20,7 +20,7 @@
 -- --------------------------------------------------------------------
 --     Target Database:   postgres
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:58 2009
+--     Generated at:      Fri Jun 26 01:55:21 2009
 --     Input Files:       estresadito.dia
 
 -- alter table alumnos drop constraint alumnos_fk_Generos_id-- (is implicitly done)
@@ -47,7 +47,7 @@
 -- --------------------------------------------------------------------
 --     Target Database:   postgres
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:58 2009
+--     Generated at:      Fri Jun 26 01:55:21 2009
 --     Input Files:       estresadito.dia
 
 
@@ -57,7 +57,7 @@
 -- --------------------------------------------------------------------
 --     Target Database:   postgres
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:58 2009
+--     Generated at:      Fri Jun 26 01:55:21 2009
 --     Input Files:       estresadito.dia
 
 
@@ -66,7 +66,7 @@
 -- --------------------------------------------------------------------
 --     Target Database:   postgres
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:58 2009
+--     Generated at:      Fri Jun 26 01:55:21 2009
 --     Input Files:       estresadito.dia
 
 drop table maestros cascade ;
@@ -91,7 +91,7 @@ drop table alumnos_grupos cascade ;
 -- --------------------------------------------------------------------
 --     Target Database:   postgres
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:58 2009
+--     Generated at:      Fri Jun 26 01:55:21 2009
 --     Input Files:       estresadito.dia
 
 
@@ -135,7 +135,7 @@ create table generos (
 
 -- pagos
 create table pagos (
-  id                        int not null,
+  id                        int default auto_increment not null,
   alumnos_id                int not null,
   costos_id                 int not null,
   cobertura_inicial         date,
@@ -154,8 +154,8 @@ create table costos (
   niveles_escolares_id      int not null,
   concepto                  varchar(50),
   importe                   float,
-  descuento                 int(1),
-  descuento_porcentaje      int(1),
+  descuento                 bool,
+  descuento_porcentaje      bool,
   constraint pk_Costos primary key (id)
 ) ;
 
@@ -270,7 +270,7 @@ comment on column alumnos.nacimiento_lugar is 'toma los datos de la tabla munici
 -- --------------------------------------------------------------------
 --     Target Database:   postgres
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:58 2009
+--     Generated at:      Fri Jun 26 01:55:21 2009
 --     Input Files:       estresadito.dia
 
 
@@ -280,7 +280,7 @@ comment on column alumnos.nacimiento_lugar is 'toma los datos de la tabla munici
 -- --------------------------------------------------------------------
 --     Target Database:   postgres
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:58 2009
+--     Generated at:      Fri Jun 26 01:55:21 2009
 --     Input Files:       estresadito.dia
 
 
@@ -289,7 +289,7 @@ comment on column alumnos.nacimiento_lugar is 'toma los datos de la tabla munici
 -- --------------------------------------------------------------------
 --     Target Database:   postgres
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:58 2009
+--     Generated at:      Fri Jun 26 01:55:21 2009
 --     Input Files:       estresadito.dia
 
 
@@ -320,7 +320,7 @@ insert into niveles_escolares (id, valor) values ( 3, 'Preparatoria' ) ;
 -- --------------------------------------------------------------------
 --     Target Database:   postgres
 --     SQL Generator:     tedia2sql -- v1.2.12
---     Generated at:      Thu Jun 25 18:02:58 2009
+--     Generated at:      Fri Jun 26 01:55:21 2009
 --     Input Files:       estresadito.dia
 
 alter table alumnos add constraint alumnos_fk_Generos_id
