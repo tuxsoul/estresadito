@@ -1,36 +1,34 @@
-<h2>New Costo</h2>
+<h2>Nuevo Costo</h2>
 <form action="<?php echo $html->url('/costos/add'); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('Costo/niveles_escolares_id', 'Niveles Escolares');?>
+	<?php echo $form->labelTag('Costo/niveles_escolares_id', 'Nivel Escolar');?>
  	<?php echo $html->selectTag('Costo/niveles_escolares_id', $nivelesEscolares, $html->tagValue('Costo/niveles_escolares_id'), array(), array(), false);?>
-	<?php echo $html->tagErrorMsg('Costo/niveles_escolares_id', 'Please select the Niveles Escolares.') ?>
+	<?php echo $html->tagErrorMsg('Costo/niveles_escolares_id', 'Por favor selecciona el Nivel Escolar.') ?>
 </div>
 <div class="required"> 
 	<?php echo $form->labelTag('Costo/concepto', 'Concepto');?>
  	<?php echo $html->input('Costo/concepto', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Costo/concepto', 'Please enter the Concepto.');?>
+	<?php echo $html->tagErrorMsg('Costo/concepto', 'Por favor ingresa el Concepto.');?>
 </div>
 <div class="optional"> 
 	<?php echo $form->labelTag('Costo/importe', 'Importe');?>
  	<?php echo $html->input('Costo/importe', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Costo/importe', 'Please enter the Importe.');?>
+	<?php echo $html->tagErrorMsg('Costo/importe', 'Por favor ingresa el Importe.');?>
 </div>
 <div class="optional"> 
-	<?php echo $form->labelTag('Costo/descuento', 'Descuento');?>
- 	<?php echo $html->input('Costo/descuento', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Costo/descuento', 'Please enter the Descuento.');?>
+	<?php echo $form->labelTag('Costo/descuento', '¿Es un Descuento?');?>
+ 	<?php echo $html->checkbox('Costo/descuento');?>
+	<?php echo $html->tagErrorMsg('Costo/descuento', 'Por favor especifica si se trata de un Descuento.');?>
 </div>
 <div class="optional"> 
-	<?php echo $form->labelTag('Costo/descuento_porcentaje', 'Descuento Porcentaje');?>
- 	<?php echo $html->input('Costo/descuento_porcentaje', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Costo/descuento_porcentaje', 'Please enter the Descuento Porcentaje.');?>
+	<?php echo $form->labelTag('Costo/descuento_porcentaje', '¿El descuento esta en Porcentaje?');?>
+	<?php echo $html->checkbox('Costo/descuento_porcentaje');?>
+	<?php echo $html->tagErrorMsg('Costo/descuento_porcentaje', 'Por favor especifica si el Descuento esta en Porcentaje.');?>
 </div>
 <div class="submit">
-	<?php echo $html->submit('Add');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('List Costos', '/costos/index')?></li>
-<li><?php echo $html->link('View Niveles Escolares', '/niveles_escolares/index/');?></li>
-<li><?php echo $html->link('Add Niveles Escolares', '/niveles_escolares/add/');?></li>
+<li><?php echo $html->link('Regresar', '/costos/index')?></li>
 </ul>

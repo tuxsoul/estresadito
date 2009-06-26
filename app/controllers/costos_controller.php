@@ -9,17 +9,9 @@ class CostosController extends AppController {
 		$this->set('costos', $this->Costo->findAll());
 	}
 
-	function view($id = null) {
-		if (!$id) {
-			$this->Session->setFlash('Invalid id for Costo.');
-			$this->redirect('/costos/index');
-		}
-		$this->set('costo', $this->Costo->read(null, $id));
-	}
-
 	function add() {
 		if (empty($this->data)) {
-			$this->set('nivelesEscolares', $this->Costo->NivelesEscolare->generateList());
+			$this->set('nivelesEscolares', $this->Costo->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
 			$this->render();
 		} else {
 			$this->cleanUpFields();
@@ -28,7 +20,7 @@ class CostosController extends AppController {
 				$this->redirect('/costos/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('nivelesEscolares', $this->Costo->NivelesEscolare->generateList());
+				$this->set('nivelesEscolares', $this->Costo->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
 			}
 		}
 	}
@@ -40,7 +32,7 @@ class CostosController extends AppController {
 				$this->redirect('/costos/index');
 			}
 			$this->data = $this->Costo->read(null, $id);
-			$this->set('nivelesEscolares', $this->Costo->NivelesEscolare->generateList());
+			$this->set('nivelesEscolares', $this->Costo->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
 		} else {
 			$this->cleanUpFields();
 			if ($this->Costo->save($this->data)) {
@@ -48,7 +40,7 @@ class CostosController extends AppController {
 				$this->redirect('/costos/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('nivelesEscolares', $this->Costo->NivelesEscolare->generateList());
+				$this->set('nivelesEscolares', $this->Costo->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
 			}
 		}
 	}

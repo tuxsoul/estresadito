@@ -1,34 +1,31 @@
 <div class="costos">
-<h2>List Costos</h2>
+<h2>Lista de Costos</h2>
 
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th>Id</th>
-	<th>Niveles Escolares</th>
+	<th>Nivel Escolar</th>
 	<th>Concepto</th>
 	<th>Importe</th>
-	<th>Descuento</th>
-	<th>Descuento Porcentaje</th>
-	<th>Actions</th>
+	<th>¿Descuento?</th>
+	<th>¿Porcentaje?</th>
+	<th>Acciones</th>
 </tr>
 <?php foreach ($costos as $costo): ?>
 <tr>
-	<td><?php echo $costo['Costo']['id']; ?></td>
-	<td>&nbsp;<?php echo $html->link($costo['']['id'], '/niveles_escolares/view/' .$costo['']['id'])?></td>
+	<td><?php echo $costo['NivelesEscolare']['valor']; ?></td>
 	<td><?php echo $costo['Costo']['concepto']; ?></td>
-	<td><?php echo $costo['Costo']['importe']; ?></td>
-	<td><?php echo $costo['Costo']['descuento']; ?></td>
-	<td><?php echo $costo['Costo']['descuento_porcentaje']; ?></td>
+	<td>$&nbsp;<?php echo $costo['Costo']['importe']; ?></td>
+	<td><?php echo $costo['Costo']['descuento'] ? 'Si' : 'No'; ?></td>
+	<td><?php echo $costo['Costo']['descuento_porcentaje'] ? 'Si' : 'No'; ?></td>
 	<td class="actions">
-		<?php echo $html->link('View','/costos/view/' . $costo['Costo']['id'])?>
-		<?php echo $html->link('Edit','/costos/edit/' . $costo['Costo']['id'])?>
-		<?php echo $html->link('Delete','/costos/delete/' . $costo['Costo']['id'], null, 'Are you sure you want to delete id ' . $costo['Costo']['id'])?>
+		<?php echo $html->link('Editar','/costos/edit/' . $costo['Costo']['id'])?>
+		<?php echo $html->link('Borrar','/costos/delete/' . $costo['Costo']['id'], null, 'Are you sure you want to delete id ' . $costo['Costo']['id'])?>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
 
 <ul class="actions">
-	<li><?php echo $html->link('New Costo', '/costos/add'); ?></li>
+	<li><?php echo $html->link('Nuevo Costo', '/costos/add'); ?></li>
 </ul>
 </div>
