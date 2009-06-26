@@ -1,13 +1,11 @@
 <div class="pago">
-<h2>View Pago</h2>
+<h2>Ver Pago</h2>
 
 <dl>
-	<dt>Id</dt>
-	<dd>&nbsp;<?php echo $pago['Pago']['id']?></dd>
-	<dt>Alumnos</dt>
-	<dd>&nbsp;<?php echo $html->link($pago['']['id'], '/alumnos/view/' .$pago['']['id'])?></dd>
-	<dt>Costos</dt>
-	<dd>&nbsp;<?php echo $html->link($pago['']['id'], '/costos/view/' .$pago['']['id'])?></dd>
+	<dt>Alumno</dt>
+	<dd>&nbsp;<?php echo $html->link($pago['Alumno']['nombre'] . ' ' . $pago['Alumno']['apellido_paterno'] . ' ' . $pago['Alumno']['apellido_materno'], '/alumnos/view/' .$pago['Alumno']['id'])?></dd>
+	<dt>Costo</dt>
+	<dd>&nbsp;<?php echo $pago['Costo']['concepto']?></dd>
 	<dt>Cobertura Inicial</dt>
 	<dd>&nbsp;<?php echo $pago['Pago']['cobertura_inicial']?></dd>
 	<dt>Cobertura Final</dt>
@@ -24,14 +22,9 @@
 	<dd>&nbsp;<?php echo $pago['Pago']['fecha']?></dd>
 </dl>
 <ul class="actions">
-	<li><?php echo $html->link('Edit Pago',   '/pagos/edit/' . $pago['Pago']['id']) ?> </li>
-	<li><?php echo $html->link('Delete Pago', '/pagos/delete/' . $pago['Pago']['id'], null, 'Are you sure you want to delete: id ' . $pago['Pago']['id'] . '?') ?> </li>
-	<li><?php echo $html->link('List Pagos',   '/pagos/index') ?> </li>
-	<li><?php echo $html->link('New Pago',	'/pagos/add') ?> </li>
-	<li><?php echo $html->link('List Alumno', '/alumnos/index/')?> </li>
-	<li><?php echo $html->link('New Alumnos', '/alumnos/add/')?> </li>
-	<li><?php echo $html->link('List Costo', '/costos/index/')?> </li>
-	<li><?php echo $html->link('New Costos', '/costos/add/')?> </li>
+	<li><?php echo $html->link('Editar Pago',   '/pagos/edit/' . $pago['Pago']['id']) ?> </li>
+	<li><?php echo $html->link('Borrar Pago', '/pagos/delete/' . $pago['Pago']['id'], null, 'Are you sure you want to delete: id ' . $pago['Pago']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Regresar',   '/pagos/index') ?> </li>
 </ul>
 
 </div>

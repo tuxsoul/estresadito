@@ -3,6 +3,7 @@ class PagosController extends AppController {
 
 	var $name = 'Pagos';
 	var $helpers = array('Html', 'Form' );
+	var $components = 'Alumnos';
 
 	function index() {
 		$this->Pago->recursive = 0;
@@ -19,8 +20,9 @@ class PagosController extends AppController {
 
 	function add() {
 		if (empty($this->data)) {
-			$this->set('alumnos', $this->Pago->Alumno->generateList());
-			$this->set('costos', $this->Pago->Costo->generateList());
+			$this->set('costos', $this->Pago->Costo->generateList(null, null, null, '{n}.Costo.id', '{n}.Costo.concepto'));
+			$tmp = $this->Pago->Alumno->findAll();
+			$this->set('alumnos', $this->Alumnos->crearSelect($tmp));
 			$this->render();
 		} else {
 			$this->cleanUpFields();
@@ -29,8 +31,9 @@ class PagosController extends AppController {
 				$this->redirect('/pagos/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('alumnos', $this->Pago->Alumno->generateList());
-				$this->set('costos', $this->Pago->Costo->generateList());
+				$this->set('costos', $this->Pago->Costo->generateList(null, null, null, '{n}.Costo.id', '{n}.Costo.concepto'));
+				$tmp = $this->Pago->Alumno->findAll();
+				$this->set('alumnos', $this->Alumnos->crearSelect($tmp));
 			}
 		}
 	}
@@ -42,8 +45,9 @@ class PagosController extends AppController {
 				$this->redirect('/pagos/index');
 			}
 			$this->data = $this->Pago->read(null, $id);
-			$this->set('alumnos', $this->Pago->Alumno->generateList());
-			$this->set('costos', $this->Pago->Costo->generateList());
+			$this->set('costos', $this->Pago->Costo->generateList(null, null, null, '{n}.Costo.id', '{n}.Costo.concepto'));
+			$tmp = $this->Pago->Alumno->findAll();
+			$this->set('alumnos', $this->Alumnos->crearSelect($tmp));
 		} else {
 			$this->cleanUpFields();
 			if ($this->Pago->save($this->data)) {
@@ -51,8 +55,9 @@ class PagosController extends AppController {
 				$this->redirect('/pagos/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('alumnos', $this->Pago->Alumno->generateList());
-				$this->set('costos', $this->Pago->Costo->generateList());
+				$this->set('costos', $this->Pago->Costo->generateList(null, null, null, '{n}.Costo.id', '{n}.Costo.concepto'));
+				$tmp = $this->Pago->Alumno->findAll();
+				$this->set('alumnos', $this->Alumnos->crearSelect($tmp));
 			}
 		}
 	}

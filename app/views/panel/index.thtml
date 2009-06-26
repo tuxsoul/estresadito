@@ -27,7 +27,9 @@
 	</td>
 </tr>
 <tr>
-	<td class="actions"></td>
+	<td class="actions">
+		<?php echo $html->link('Pagos', '/pagos'); ?>
+	</td>
 	<td class="actions">
 		<?php echo $html->link('Costos', '/costos'); ?>
 	</td>
