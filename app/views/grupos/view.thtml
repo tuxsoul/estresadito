@@ -1,52 +1,47 @@
 <div class="grupo">
-<h2>View Grupo</h2>
+<h2>Ver Grupo</h2>
 
 <dl>
-	<dt>Id</dt>
-	<dd>&nbsp;<?php echo $grupo['Grupo']['id']?></dd>
-	<dt>Ciclos Escolares</dt>
-	<dd>&nbsp;<?php echo $html->link($grupo['']['id'], '/ciclos_escolares/view/' .$grupo['']['id'])?></dd>
+	<dt>Ciclo Escolar</dt>
+	<dd><?php echo $cicloEscolar?></dd>
 	<dt>Grado</dt>
 	<dd>&nbsp;<?php echo $grupo['Grupo']['grado']?></dd>
 	<dt>Grupo</dt>
 	<dd>&nbsp;<?php echo $grupo['Grupo']['grupo']?></dd>
 </dl>
 <ul class="actions">
-	<li><?php echo $html->link('Edit Grupo',   '/grupos/edit/' . $grupo['Grupo']['id']) ?> </li>
-	<li><?php echo $html->link('Delete Grupo', '/grupos/delete/' . $grupo['Grupo']['id'], null, 'Are you sure you want to delete: id ' . $grupo['Grupo']['id'] . '?') ?> </li>
-	<li><?php echo $html->link('List Grupos',   '/grupos/index') ?> </li>
-	<li><?php echo $html->link('New Grupo',	'/grupos/add') ?> </li>
-	<li><?php echo $html->link('List Ciclos Escolare', '/ciclos_escolares/index/')?> </li>
-	<li><?php echo $html->link('New Ciclos Escolares', '/ciclos_escolares/add/')?> </li>
+	<li><?php echo $html->link('Editar Grupo',   '/grupos/edit/' . $grupo['Grupo']['id']) ?> </li>
+	<li><?php echo $html->link('Borrar Grupo', '/grupos/delete/' . $grupo['Grupo']['id'], null, 'Are you sure you want to delete: id ' . $grupo['Grupo']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Regresar',   '/grupos/index') ?> </li>
 </ul>
 
 </div>
+
 <div class="related">
-<h3>Related Alumnos</h3>
 <?php if (!empty($grupo['Alumno'])):?>
+<h3>Alumnos Relacionados</h3>
 <table cellpadding="0" cellspacing="0">
 <tr>
-<?php foreach ($grupo['Alumno']['0'] as $column => $value): ?>
-<th><?php echo $column?></th>
-<?php endforeach; ?>
-<th>Actions</th>
+	<th>Clave</th>
+	<th>Nombre</th>
+	<th>Acciones</th>
 </tr>
 <?php foreach ($grupo['Alumno'] as $alumno):?>
 <tr>
-	<?php foreach ($alumno as $column => $value):?>
-		<td><?php echo $value;?></td>
-	<?php endforeach;?>
+	<td><?php echo $alumno['clave']; ?></td>
+	<td><?php echo $alumno['nombre'] . ' ' . $alumno['apellido_paterno'] . ' ' . $alumno['apellido_materno']; ?></td>
 	<td class="actions">
-		<?php echo $html->link('View', '/alumnos/view/' . $alumno['id']);?>
-		<?php echo $html->link('Edit', '/alumnos/edit/' . $alumno['id']);?>
-		<?php echo $html->link('Delete', '/alumnos/delete/' . $alumno['id'], null, 'Are you sure you want to delete: id ' . $alumno['id'] . '?');?>
+		<?php echo $html->link('Ver', '/alumnos/view/' . $alumno['id']);?>
+		<?php echo $html->link('Edita', '/alumnos/edit/' . $alumno['id']);?>
+		<?php echo $html->link('Borrar', '/alumnos/delete/' . $alumno['id'], null, 'Are you sure you want to delete: id ' . $alumno['id'] . '?');?>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
-<?php endif; ?>
 
 <ul class="actions">
-	<li><?php echo $html->link('New Alumno', '/alumnos/add/');?> </li>
+	<li><?php echo $html->link('Nuevo Alumno', '/alumnos/add/');?> </li>
 </ul>
+
+<?php endif; ?>
 </div>

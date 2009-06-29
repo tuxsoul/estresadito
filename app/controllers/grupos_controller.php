@@ -3,9 +3,10 @@ class GruposController extends AppController {
 
 	var $name = 'Grupos';
 	var $helpers = array('Html', 'Form' );
+	var $components = 'CiclosEscolares';
 
 	function index() {
-		$this->Grupo->recursive = 0;
+		$this->Grupo->recursive = 2;
 		$this->set('grupos', $this->Grupo->findAll());
 	}
 
@@ -15,13 +16,20 @@ class GruposController extends AppController {
 			$this->redirect('/grupos/index');
 		}
 		$this->set('grupo', $this->Grupo->read(null, $id));
+		$this->Grupo->CiclosEscolare->recursive = -1;
+		$grupos = $this->Grupo->CiclosEscolare->findAll();
+		$this->Grupo->CiclosEscolare->NivelesEscolare->recursive = -1;
+		$niveles = $this->Grupo->CiclosEscolare->NivelesEscolare->findAll();
+		$this->set('cicloEscolar', $this->CiclosEscolares->mostrar($id, $grupos, $niveles));
 	}
 
 	function add() {
 		if (empty($this->data)) {
-			$this->set('alumnos', $this->Grupo->Alumno->generateList());
-			$this->set('selectedAlumnos', null);
-			$this->set('ciclosEscolares', $this->Grupo->CiclosEscolare->generateList());
+			$this->Grupo->CiclosEscolare->recursive = -1;
+			$grupos = $this->Grupo->CiclosEscolare->findAll();
+			$this->Grupo->CiclosEscolare->NivelesEscolare->recursive = -1;
+			$niveles = $this->Grupo->CiclosEscolare->NivelesEscolare->findAll();
+			$this->set('ciclosEscolares', $this->CiclosEscolares->crearSelect($grupos, $niveles));
 			$this->render();
 		} else {
 			$this->cleanUpFields();
@@ -30,10 +38,11 @@ class GruposController extends AppController {
 				$this->redirect('/grupos/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('alumnos', $this->Grupo->Alumno->generateList());
-				if (empty($this->data['Alumno']['Alumno'])) { $this->data['Alumno']['Alumno'] = null; }
-				$this->set('selectedAlumnos', $this->data['Alumno']['Alumno']);
-				$this->set('ciclosEscolares', $this->Grupo->CiclosEscolare->generateList());
+				$this->Grupo->CiclosEscolare->recursive = -1;
+				$grupos = $this->Grupo->CiclosEscolare->findAll();
+				$this->Grupo->CiclosEscolare->NivelesEscolare->recursive = -1;
+				$niveles = $this->Grupo->CiclosEscolare->NivelesEscolare->findAll();
+				$this->set('ciclosEscolares', $this->CiclosEscolares->crearSelect($grupos, $niveles));
 			}
 		}
 	}
@@ -45,10 +54,11 @@ class GruposController extends AppController {
 				$this->redirect('/grupos/index');
 			}
 			$this->data = $this->Grupo->read(null, $id);
-			$this->set('alumnos', $this->Grupo->Alumno->generateList());
-			if (empty($this->data['Alumno'])) { $this->data['Alumno'] = null; }
-			$this->set('selectedAlumnos', $this->_selectedArray($this->data['Alumno']));
-			$this->set('ciclosEscolares', $this->Grupo->CiclosEscolare->generateList());
+			$this->Grupo->CiclosEscolare->recursive = -1;
+			$grupos = $this->Grupo->CiclosEscolare->findAll();
+			$this->Grupo->CiclosEscolare->NivelesEscolare->recursive = -1;
+			$niveles = $this->Grupo->CiclosEscolare->NivelesEscolare->findAll();
+			$this->set('ciclosEscolares', $this->CiclosEscolares->crearSelect($grupos, $niveles));
 		} else {
 			$this->cleanUpFields();
 			if ($this->Grupo->save($this->data)) {
@@ -56,10 +66,11 @@ class GruposController extends AppController {
 				$this->redirect('/grupos/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('alumnos', $this->Grupo->Alumno->generateList());
-				if (empty($this->data['Alumno']['Alumno'])) { $this->data['Alumno']['Alumno'] = null; }
-				$this->set('selectedAlumnos', $this->data['Alumno']['Alumno']);
-				$this->set('ciclosEscolares', $this->Grupo->CiclosEscolare->generateList());
+				$this->Grupo->CiclosEscolare->recursive = -1;
+				$grupos = $this->Grupo->CiclosEscolare->findAll();
+				$this->Grupo->CiclosEscolare->NivelesEscolare->recursive = -1;
+				$niveles = $this->Grupo->CiclosEscolare->NivelesEscolare->findAll();
+				$this->set('ciclosEscolares', $this->CiclosEscolares->crearSelect($grupos, $niveles));
 			}
 		}
 	}

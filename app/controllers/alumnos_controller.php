@@ -23,6 +23,9 @@ class AlumnosController extends AppController {
 		$this->set('alumno', $tmp);
 		$this->set('nacimientoLugar', $this->Municipios->mostrar($tmp['Alumno']['municipios_estados_id'], $municipios));
 		$this->set('residenciaLugar', $this->Municipios->mostrar($tmp['Alumno']['nacimiento_lugar'], $municipios));
+
+		$this->Alumno->NivelesEscolare->recursive = -1;
+		$this->set('nivelesEscolare', $this->Alumno->NivelesEscolare->findAll());
 	}
 
 	function add() {

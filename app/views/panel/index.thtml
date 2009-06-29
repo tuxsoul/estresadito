@@ -16,6 +16,7 @@
 	<td class="actions">
 		<?php echo $html->link('Niveles Escolares', '/niveles_escolares'); ?><br />
 		<?php echo $html->link('Ciclos Escolares', '/ciclos_escolares'); ?><br />
+		<?php echo $html->link('Grupos', '/grupos'); ?>
 	</td>
 	<td class="actions">
 		<?php echo $html->link('Maestros', '/maestros'); ?><br />
@@ -23,9 +24,7 @@
 	</td>
 </tr>
 <tr>
-	<td class="actions">
-		<?php echo $html->link('Pagos', '/pagos'); ?>
-	</td>
+	<td class="actions"></td>
 	<td class="actions">
 		<?php echo $html->link('Estado Civil', '/estados_civiles'); ?><br />
 		<?php echo $html->link('Genero', '/generos'); ?><br />
@@ -36,7 +35,9 @@
 	<td class="actions"></td>
 </tr>
 <tr>
-	<td class="actions"></td>
+	<td class="actions">
+		<?php echo $html->link('Pagos', '/pagos'); ?>
+	</td>
 	<td class="actions">
 		<?php echo $html->link('Costos', '/costos'); ?>
 	</td>

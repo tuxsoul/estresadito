@@ -1,30 +1,30 @@
 <div class="grupos">
-<h2>List Grupos</h2>
+<h2>Lista de Grupos</h2>
 
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th>Id</th>
-	<th>Ciclos Escolares</th>
+	<th>Nivel Escolar</th>
+	<th>Ciclo Escolar</th>
 	<th>Grado</th>
 	<th>Grupo</th>
-	<th>Actions</th>
+	<th>Acciones</th>
 </tr>
 <?php foreach ($grupos as $grupo): ?>
 <tr>
-	<td><?php echo $grupo['Grupo']['id']; ?></td>
-	<td>&nbsp;<?php echo $html->link($grupo['']['id'], '/ciclos_escolares/view/' .$grupo['']['id'])?></td>
+	<td><?php echo $grupo['CiclosEscolare']['NivelesEscolare']['valor']; ?></td>
+	<td><?php echo $grupo['CiclosEscolare']['inicio'] . ' - ' . $grupo['CiclosEscolare']['fin']; ?></td>
 	<td><?php echo $grupo['Grupo']['grado']; ?></td>
 	<td><?php echo $grupo['Grupo']['grupo']; ?></td>
 	<td class="actions">
-		<?php echo $html->link('View','/grupos/view/' . $grupo['Grupo']['id'])?>
-		<?php echo $html->link('Edit','/grupos/edit/' . $grupo['Grupo']['id'])?>
-		<?php echo $html->link('Delete','/grupos/delete/' . $grupo['Grupo']['id'], null, 'Are you sure you want to delete id ' . $grupo['Grupo']['id'])?>
+		<?php echo $html->link('Ver','/grupos/view/' . $grupo['Grupo']['id'])?>
+		<?php echo $html->link('Editar','/grupos/edit/' . $grupo['Grupo']['id'])?>
+		<?php echo $html->link('Borrar','/grupos/delete/' . $grupo['Grupo']['id'], null, 'Are you sure you want to delete id ' . $grupo['Grupo']['id'])?>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
 
 <ul class="actions">
-	<li><?php echo $html->link('New Grupo', '/grupos/add'); ?></li>
+	<li><?php echo $html->link('Nuevo Grupo', '/grupos/add'); ?></li>
 </ul>
 </div>
