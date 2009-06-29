@@ -20,7 +20,7 @@ class CalificacionesController extends AppController {
 	function add() {
 		if (empty($this->data)) {
 			$this->set('alumnosGrupos', $this->Calificacione->AlumnosGrupo->generateList());
-			$this->set('maestrosMaterias', $this->Calificacione->MaestrosMaterium->generateList());
+			$this->set('maestrosMaterias', $this->Calificacione->MaestrosMateria->generateList());
 			$this->render();
 		} else {
 			$this->cleanUpFields();
@@ -30,7 +30,7 @@ class CalificacionesController extends AppController {
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
 				$this->set('alumnosGrupos', $this->Calificacione->AlumnosGrupo->generateList());
-				$this->set('maestrosMaterias', $this->Calificacione->MaestrosMaterium->generateList());
+				$this->set('maestrosMaterias', $this->Calificacione->MaestrosMateria->generateList());
 			}
 		}
 	}
@@ -43,7 +43,7 @@ class CalificacionesController extends AppController {
 			}
 			$this->data = $this->Calificacione->read(null, $id);
 			$this->set('alumnosGrupos', $this->Calificacione->AlumnosGrupo->generateList());
-			$this->set('maestrosMaterias', $this->Calificacione->MaestrosMaterium->generateList());
+			$this->set('maestrosMaterias', $this->Calificacione->MaestrosMateria->generateList());
 		} else {
 			$this->cleanUpFields();
 			if ($this->Calificacione->save($this->data)) {
@@ -52,7 +52,7 @@ class CalificacionesController extends AppController {
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
 				$this->set('alumnosGrupos', $this->Calificacione->AlumnosGrupo->generateList());
-				$this->set('maestrosMaterias', $this->Calificacione->MaestrosMaterium->generateList());
+				$this->set('maestrosMaterias', $this->Calificacione->MaestrosMateria->generateList());
 			}
 		}
 	}

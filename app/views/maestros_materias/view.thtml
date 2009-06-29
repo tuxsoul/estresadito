@@ -1,0 +1,23 @@
+<div class="maestrosMaterium">
+<h2>View Maestros Materium</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $maestrosMaterium['MaestrosMateria']['id']?></dd>
+	<dt>Maestros Id</dt>
+	<dd>&nbsp;<?php echo $maestrosMaterium['MaestrosMateria']['maestros_id']?></dd>
+	<dt>Materias Id</dt>
+	<dd>&nbsp;<?php echo $maestrosMaterium['MaestrosMateria']['materias_id']?></dd>
+	<dt>Ciclos Escolares Id</dt>
+	<dd>&nbsp;<?php echo $maestrosMaterium['MaestrosMateria']['ciclos_escolares_id']?></dd>
+	<dt>Grado</dt>
+	<dd>&nbsp;<?php echo $maestrosMaterium['MaestrosMateria']['grado']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Edit Maestros Materium',   '/maestros_materias/edit/' . $maestrosMaterium['MaestrosMateria']['id']) ?> </li>
+	<li><?php echo $html->link('Delete Maestros Materium', '/maestros_materias/delete/' . $maestrosMaterium['MaestrosMateria']['id'], null, 'Are you sure you want to delete: id ' . $maestrosMaterium['MaestrosMateria']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('List Maestros Materias',   '/maestros_materias/index') ?> </li>
+	<li><?php echo $html->link('New Maestros Materium',	'/maestros_materias/add') ?> </li>
+</ul>
+
+</div>

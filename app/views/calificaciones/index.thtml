@@ -1,0 +1,30 @@
+<div class="calificaciones">
+<h2>List Calificaciones</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Alumnos Grupos Id</th>
+	<th>Maestros Materias Id</th>
+	<th>Calificacion</th>
+	<th>Actions</th>
+</tr>
+<?php foreach ($calificaciones as $calificacione): ?>
+<tr>
+	<td><?php echo $calificacione['Calificacione']['id']; ?></td>
+	<td><?php echo $calificacione['Calificacione']['alumnos_grupos_id']; ?></td>
+	<td><?php echo $calificacione['Calificacione']['maestros_materias_id']; ?></td>
+	<td><?php echo $calificacione['Calificacione']['calificacion']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('View','/calificaciones/view/' . $calificacione['Calificacione']['id'])?>
+		<?php echo $html->link('Edit','/calificaciones/edit/' . $calificacione['Calificacione']['id'])?>
+		<?php echo $html->link('Delete','/calificaciones/delete/' . $calificacione['Calificacione']['id'], null, 'Are you sure you want to delete id ' . $calificacione['Calificacione']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Calificacione', '/calificaciones/add'); ?></li>
+</ul>
+</div>

@@ -14,13 +14,13 @@ class MaestrosMateriasController extends AppController {
 			$this->Session->setFlash('Invalid id for Maestros Materium.');
 			$this->redirect('/maestros_materias/index');
 		}
-		$this->set('maestrosMaterium', $this->MaestrosMateria->read(null, $id));
+		$this->set('maestrosMateria', $this->MaestrosMateria->read(null, $id));
 	}
 
 	function add() {
 		if (empty($this->data)) {
 			$this->set('maestros', $this->MaestrosMateria->Maestro->generateList());
-			$this->set('materias', $this->MaestrosMateria->Materium->generateList());
+			$this->set('materias', $this->MaestrosMateria->Materia->generateList());
 			$this->set('ciclosEscolares', $this->MaestrosMateria->CiclosEscolare->generateList());
 			$this->render();
 		} else {
@@ -31,7 +31,7 @@ class MaestrosMateriasController extends AppController {
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
 				$this->set('maestros', $this->MaestrosMateria->Maestro->generateList());
-				$this->set('materias', $this->MaestrosMateria->Materium->generateList());
+				$this->set('materias', $this->MaestrosMateria->Materia->generateList());
 				$this->set('ciclosEscolares', $this->MaestrosMateria->CiclosEscolare->generateList());
 			}
 		}
@@ -45,7 +45,7 @@ class MaestrosMateriasController extends AppController {
 			}
 			$this->data = $this->MaestrosMateria->read(null, $id);
 			$this->set('maestros', $this->MaestrosMateria->Maestro->generateList());
-			$this->set('materias', $this->MaestrosMateria->Materium->generateList());
+			$this->set('materias', $this->MaestrosMateria->Materia->generateList());
 			$this->set('ciclosEscolares', $this->MaestrosMateria->CiclosEscolare->generateList());
 		} else {
 			$this->cleanUpFields();
@@ -55,7 +55,7 @@ class MaestrosMateriasController extends AppController {
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
 				$this->set('maestros', $this->MaestrosMateria->Maestro->generateList());
-				$this->set('materias', $this->MaestrosMateria->Materium->generateList());
+				$this->set('materias', $this->MaestrosMateria->Materia->generateList());
 				$this->set('ciclosEscolares', $this->MaestrosMateria->CiclosEscolare->generateList());
 			}
 		}

@@ -1,0 +1,32 @@
+<div class="maestrosMaterias">
+<h2>List Maestros Materias</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Maestros Id</th>
+	<th>Materias Id</th>
+	<th>Ciclos Escolares Id</th>
+	<th>Grado</th>
+	<th>Actions</th>
+</tr>
+<?php foreach ($maestrosMaterias as $maestrosMaterium): ?>
+<tr>
+	<td><?php echo $maestrosMaterium['MaestrosMateria']['id']; ?></td>
+	<td><?php echo $maestrosMaterium['MaestrosMateria']['maestros_id']; ?></td>
+	<td><?php echo $maestrosMaterium['MaestrosMateria']['materias_id']; ?></td>
+	<td><?php echo $maestrosMaterium['MaestrosMateria']['ciclos_escolares_id']; ?></td>
+	<td><?php echo $maestrosMaterium['MaestrosMateria']['grado']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('View','/maestros_materias/view/' . $maestrosMaterium['MaestrosMateria']['id'])?>
+		<?php echo $html->link('Edit','/maestros_materias/edit/' . $maestrosMaterium['MaestrosMateria']['id'])?>
+		<?php echo $html->link('Delete','/maestros_materias/delete/' . $maestrosMaterium['MaestrosMateria']['id'], null, 'Are you sure you want to delete id ' . $maestrosMaterium['MaestrosMateria']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('New Maestros Materium', '/maestros_materias/add'); ?></li>
+</ul>
+</div>

@@ -1,0 +1,29 @@
+<h2>New Maestros Materium</h2>
+<form action="<?php echo $html->url('/maestros_materias/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('MaestrosMateria/maestros_id', 'Maestros Id');?>
+ 	<?php echo $html->input('MaestrosMateria/maestros_id', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('MaestrosMateria/maestros_id', 'Please enter the Maestros Id.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('MaestrosMateria/materias_id', 'Materias Id');?>
+ 	<?php echo $html->input('MaestrosMateria/materias_id', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('MaestrosMateria/materias_id', 'Please enter the Materias Id.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('MaestrosMateria/ciclos_escolares_id', 'Ciclos Escolares Id');?>
+ 	<?php echo $html->input('MaestrosMateria/ciclos_escolares_id', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('MaestrosMateria/ciclos_escolares_id', 'Please enter the Ciclos Escolares Id.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('MaestrosMateria/grado', 'Grado');?>
+ 	<?php echo $html->input('MaestrosMateria/grado', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('MaestrosMateria/grado', 'Please enter the Grado.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Add');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('List Maestros Materias', '/maestros_materias/index')?></li>
+</ul>
