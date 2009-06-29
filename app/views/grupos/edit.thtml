@@ -1,0 +1,33 @@
+<h2>Edit Grupo</h2>
+<form action="<?php echo $html->url('/grupos/edit/'.$html->tagValue('Grupo/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Grupo/ciclos_escolares_id', 'Ciclos Escolares');?>
+ 	<?php echo $html->selectTag('Grupo/ciclos_escolares_id', $ciclosEscolares, $html->tagValue('Grupo/ciclos_escolares_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Grupo/ciclos_escolares_id', 'Please select the Ciclos Escolares.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Grupo/grado', 'Grado');?>
+ 	<?php echo $html->input('Grupo/grado', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Grupo/grado', 'Please enter the Grado.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Grupo/grupo', 'Grupo');?>
+ 	<?php echo $html->input('Grupo/grupo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Grupo/grupo', 'Please enter the Grupo.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Alumno/Alumno', 'Related Alumnos');?>
+ 	<?php echo $html->selectTag('Alumno/Alumno', $alumnos, $selectedAlumnos, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Alumno/Alumno', 'Please select the Related Alumnos.');?>
+</div>
+<?php echo $html->hidden('Grupo/id')?>
+<div class="submit">
+	<?php echo $html->submit('Save');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Delete','/grupos/delete/' . $html->tagValue('Grupo/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Grupo/id'));?>
+<li><?php echo $html->link('List Grupos', '/grupos/index')?></li>
+<li><?php echo $html->link('View Ciclos Escolares', '/ciclos_escolares/index/');?></li>
+<li><?php echo $html->link('Add Ciclos Escolares', '/ciclos_escolares/add/');?></li>
+</ul>
