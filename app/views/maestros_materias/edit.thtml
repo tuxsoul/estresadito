@@ -1,31 +1,31 @@
-<h2>Edit Maestros Materium</h2>
+<h2>Editar Asignación de Materia a Maestros</h2>
 <form action="<?php echo $html->url('/maestros_materias/edit/'.$html->tagValue('MaestrosMateria/id')); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('MaestrosMateria/maestros_id', 'Maestros Id');?>
- 	<?php echo $html->input('MaestrosMateria/maestros_id', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('MaestrosMateria/maestros_id', 'Please enter the Maestros Id.');?>
+	<?php echo $form->labelTag('MaestrosMateria/maestros_id', 'Maestro');?>
+ 	<?php echo $html->selectTag('MaestrosMateria/maestros_id', $maestros);?>
+	<?php echo $html->tagErrorMsg('MaestrosMateria/maestros_id', 'Por favor selecciona al Maestro.');?>
 </div>
 <div class="required"> 
-	<?php echo $form->labelTag('MaestrosMateria/materias_id', 'Materias Id');?>
- 	<?php echo $html->input('MaestrosMateria/materias_id', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('MaestrosMateria/materias_id', 'Please enter the Materias Id.');?>
+	<?php echo $form->labelTag('MaestrosMateria/materias_id', 'Materia');?>
+ 	<?php echo $html->selectTag('MaestrosMateria/materias_id', $materias);?>
+	<?php echo $html->tagErrorMsg('MaestrosMateria/materias_id', 'Por favor selecciona la Materia.');?>
 </div>
 <div class="required"> 
-	<?php echo $form->labelTag('MaestrosMateria/ciclos_escolares_id', 'Ciclos Escolares Id');?>
- 	<?php echo $html->input('MaestrosMateria/ciclos_escolares_id', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('MaestrosMateria/ciclos_escolares_id', 'Please enter the Ciclos Escolares Id.');?>
+	<?php echo $form->labelTag('MaestrosMateria/ciclos_escolares_id', 'Ciclo Escolar');?>
+ 	<?php echo $html->selectTag('MaestrosMateria/ciclos_escolares_id', $ciclosEscolares);?>
+	<?php echo $html->tagErrorMsg('MaestrosMateria/ciclos_escolares_id', 'Por favor selecciona el Ciclo Escolar.');?>
 </div>
 <div class="required"> 
 	<?php echo $form->labelTag('MaestrosMateria/grado', 'Grado');?>
  	<?php echo $html->input('MaestrosMateria/grado', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('MaestrosMateria/grado', 'Please enter the Grado.');?>
+	<?php echo $html->tagErrorMsg('MaestrosMateria/grado', 'Por favor ingresa el Grado.');?>
 </div>
 <?php echo $html->hidden('MaestrosMateria/id')?>
 <div class="submit">
-	<?php echo $html->submit('Save');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('Delete','/maestros_materias/delete/' . $html->tagValue('MaestrosMateria/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('MaestrosMateria/id'));?>
-<li><?php echo $html->link('List Maestros Materias', '/maestros_materias/index')?></li>
+<li><?php echo $html->link('Borrar','/maestros_materias/delete/' . $html->tagValue('MaestrosMateria/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('MaestrosMateria/id'));?>
+<li><?php echo $html->link('Regresar', '/maestros_materias/index')?></li>
 </ul>

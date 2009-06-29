@@ -22,27 +22,23 @@
 <h3>Materias Asignadas</h3>
 <table cellpadding="0" cellspacing="0">
 <tr>
-<?php foreach ($maestro['Materia']['0'] as $column => $value): ?>
-<th><?php echo $column?></th>
-<?php endforeach; ?>
-<th>Actions</th>
+	<th>Materia</th>
+	<th>Acciones</th>
 </tr>
-<?php foreach ($maestro['Materia'] as $materium):?>
+<?php foreach ($maestro['Materia'] as $materia):?>
 <tr>
-	<?php foreach ($materium as $column => $value):?>
-		<td><?php echo $value;?></td>
-	<?php endforeach;?>
+	<td><?php echo $materia['nombre']; ?></td>
 	<td class="actions">
-		<?php echo $html->link('View', '/materia/view/' . $materium['']);?>
-		<?php echo $html->link('Edit', '/materia/edit/' . $materium['']);?>
-		<?php echo $html->link('Delete', '/materia/delete/' . $materium[''], null, 'Are you sure you want to delete: id ' . $materium[''] . '?');?>
+		<?php echo $html->link('Ver', '/materias/view/' . $materia['id']);?>
+		<?php echo $html->link('Editar', '/materias/edit/' . $materia['id']);?>
+		<?php echo $html->link('Borrar', '/materias/delete/' . $materia['id'], null, 'Are you sure you want to delete: id ' . $materia['id'] . '?');?>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
 
 <ul class="actions">
-	<li><?php echo $html->link('Asignar Materias', '/materias_maestros');?> </li>
+	<li><?php echo $html->link('Asigna Materias a Maestros', '/maestros_materias');?> </li>
 </ul>
 
 <?php endif; ?>

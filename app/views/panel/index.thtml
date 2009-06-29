@@ -32,7 +32,9 @@
 		<?php echo $html->link('Nacionalidad', '/nacionalidades'); ?><br />
 		<?php echo $html->link('Status', '/statuses'); ?>
 	</td>
-	<td class="actions"></td>
+	<td class="actions">
+		<?php echo $html->link('Asignar Materias', '/maestros_materias'); ?>
+	</td>
 </tr>
 <tr>
 	<td class="actions">

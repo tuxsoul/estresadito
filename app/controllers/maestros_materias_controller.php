@@ -3,25 +3,22 @@ class MaestrosMateriasController extends AppController {
 
 	var $name = 'MaestrosMaterias';
 	var $helpers = array('Html', 'Form' );
+	var $components = array('Alumnos', 'Maestros', 'CiclosEscolares');
 
 	function index() {
 		$this->MaestrosMateria->recursive = 0;
+		$this->set('nivelesEscolares', $this->MaestrosMateria->CiclosEscolare->NivelesEscolare->findAll());
 		$this->set('maestrosMaterias', $this->MaestrosMateria->findAll());
-	}
-
-	function view($id = null) {
-		if (!$id) {
-			$this->Session->setFlash('Invalid id for Maestros Materium.');
-			$this->redirect('/maestros_materias/index');
-		}
-		$this->set('maestrosMateria', $this->MaestrosMateria->read(null, $id));
 	}
 
 	function add() {
 		if (empty($this->data)) {
-			$this->set('maestros', $this->MaestrosMateria->Maestro->generateList());
-			$this->set('materias', $this->MaestrosMateria->Materia->generateList());
-			$this->set('ciclosEscolares', $this->MaestrosMateria->CiclosEscolare->generateList());
+			$maestro = $this->MaestrosMateria->Maestro->findAll();
+			$this->set('maestros', $this->Maestros->crearSelect($maestro));
+			$cicloEscolar = $this->MaestrosMateria->CiclosEscolare->findAll();
+			$nivelEscolar = $this->MaestrosMateria->CiclosEscolare->NivelesEscolare->findAll();
+			$this->set('ciclosEscolares', $this->CiclosEscolares->crearSelect($cicloEscolar, $nivelEscolar));
+			$this->set('materias', $this->MaestrosMateria->Materia->generateList(null, null, null, '{n}.Materia.id', '{n}.Materia.nombre'));
 			$this->render();
 		} else {
 			$this->cleanUpFields();
@@ -30,9 +27,12 @@ class MaestrosMateriasController extends AppController {
 				$this->redirect('/maestros_materias/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('maestros', $this->MaestrosMateria->Maestro->generateList());
-				$this->set('materias', $this->MaestrosMateria->Materia->generateList());
-				$this->set('ciclosEscolares', $this->MaestrosMateria->CiclosEscolare->generateList());
+				$maestro = $this->MaestrosMateria->Maestro->findAll();
+				$this->set('maestros', $this->Maestros->crearSelect($maestro));
+				$cicloEscolar = $this->MaestrosMateria->CiclosEscolare->findAll();
+				$nivelEscolar = $this->MaestrosMateria->CiclosEscolare->NivelesEscolare->findAll();
+				$this->set('ciclosEscolares', $this->CiclosEscolares->crearSelect($cicloEscolar, $nivelEscolar));
+				$this->set('materias', $this->MaestrosMateria->Materia->generateList(null, null, null, '{n}.Materia.id', '{n}.Materia.nombre'));
 			}
 		}
 	}
@@ -44,9 +44,12 @@ class MaestrosMateriasController extends AppController {
 				$this->redirect('/maestros_materias/index');
 			}
 			$this->data = $this->MaestrosMateria->read(null, $id);
-			$this->set('maestros', $this->MaestrosMateria->Maestro->generateList());
-			$this->set('materias', $this->MaestrosMateria->Materia->generateList());
-			$this->set('ciclosEscolares', $this->MaestrosMateria->CiclosEscolare->generateList());
+			$maestro = $this->MaestrosMateria->Maestro->findAll();
+			$this->set('maestros', $this->Maestros->crearSelect($maestro));
+			$cicloEscolar = $this->MaestrosMateria->CiclosEscolare->findAll();
+			$nivelEscolar = $this->MaestrosMateria->CiclosEscolare->NivelesEscolare->findAll();
+			$this->set('ciclosEscolares', $this->CiclosEscolares->crearSelect($cicloEscolar, $nivelEscolar));
+			$this->set('materias', $this->MaestrosMateria->Materia->generateList(null, null, null, '{n}.Materia.id', '{n}.Materia.nombre'));			
 		} else {
 			$this->cleanUpFields();
 			if ($this->MaestrosMateria->save($this->data)) {
@@ -54,9 +57,12 @@ class MaestrosMateriasController extends AppController {
 				$this->redirect('/maestros_materias/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('maestros', $this->MaestrosMateria->Maestro->generateList());
-				$this->set('materias', $this->MaestrosMateria->Materia->generateList());
-				$this->set('ciclosEscolares', $this->MaestrosMateria->CiclosEscolare->generateList());
+				$maestro = $this->MaestrosMateria->Maestro->findAll();
+				$this->set('maestros', $this->Maestros->crearSelect($maestro));
+				$cicloEscolar = $this->MaestrosMateria->CiclosEscolare->findAll();
+				$nivelEscolar = $this->MaestrosMateria->CiclosEscolare->NivelesEscolare->findAll();
+				$this->set('ciclosEscolares', $this->CiclosEscolares->crearSelect($cicloEscolar, $nivelEscolar));
+				$this->set('materias', $this->MaestrosMateria->Materia->generateList(null, null, null, '{n}.Materia.id', '{n}.Materia.nombre'));
 			}
 		}
 	}

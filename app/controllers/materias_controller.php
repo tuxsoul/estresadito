@@ -14,7 +14,7 @@ class MateriasController extends AppController {
 			$this->Session->setFlash('Invalid id for Materium.');
 			$this->redirect('/materias/index');
 		}
-		$this->set('materium', $this->Materia->read(null, $id));
+		$this->set('materia', $this->Materia->read(null, $id));
 	}
 
 	function add() {
