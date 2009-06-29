@@ -1,30 +1,27 @@
 <div class="ciclosEscolares">
-<h2>List Ciclos Escolares</h2>
+<h2>Lista de Ciclos Escolares</h2>
 
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th>Id</th>
-	<th>Niveles Escolares</th>
-	<th>Inicio</th>
-	<th>Fin</th>
-	<th>Actions</th>
+	<th>Nivel Escolar</th>
+	<th>Inicia</th>
+	<th>Termina</th>
+	<th>Acciones</th>
 </tr>
 <?php foreach ($ciclosEscolares as $ciclosEscolare): ?>
 <tr>
-	<td><?php echo $ciclosEscolare['CiclosEscolare']['id']; ?></td>
-	<td>&nbsp;<?php echo $html->link($ciclosEscolare['']['id'], '/niveles_escolares/view/' .$ciclosEscolare['']['id'])?></td>
+	<td><?php echo $ciclosEscolare['NivelesEscolare']['valor']; ?></td>
 	<td><?php echo $ciclosEscolare['CiclosEscolare']['inicio']; ?></td>
 	<td><?php echo $ciclosEscolare['CiclosEscolare']['fin']; ?></td>
 	<td class="actions">
-		<?php echo $html->link('View','/ciclos_escolares/view/' . $ciclosEscolare['CiclosEscolare']['id'])?>
-		<?php echo $html->link('Edit','/ciclos_escolares/edit/' . $ciclosEscolare['CiclosEscolare']['id'])?>
-		<?php echo $html->link('Delete','/ciclos_escolares/delete/' . $ciclosEscolare['CiclosEscolare']['id'], null, 'Are you sure you want to delete id ' . $ciclosEscolare['CiclosEscolare']['id'])?>
+		<?php echo $html->link('Editar','/ciclos_escolares/edit/' . $ciclosEscolare['CiclosEscolare']['id'])?>
+		<?php echo $html->link('Borrar','/ciclos_escolares/delete/' . $ciclosEscolare['CiclosEscolare']['id'], null, 'Are you sure you want to delete id ' . $ciclosEscolare['CiclosEscolare']['id'])?>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
 
 <ul class="actions">
-	<li><?php echo $html->link('New Ciclos Escolare', '/ciclos_escolares/add'); ?></li>
+	<li><?php echo $html->link('Nuevo Ciclo Escolar', '/ciclos_escolares/add'); ?></li>
 </ul>
 </div>

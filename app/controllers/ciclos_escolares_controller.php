@@ -9,17 +9,9 @@ class CiclosEscolaresController extends AppController {
 		$this->set('ciclosEscolares', $this->CiclosEscolare->findAll());
 	}
 
-	function view($id = null) {
-		if (!$id) {
-			$this->Session->setFlash('Invalid id for Ciclos Escolare.');
-			$this->redirect('/ciclos_escolares/index');
-		}
-		$this->set('ciclosEscolare', $this->CiclosEscolare->read(null, $id));
-	}
-
 	function add() {
 		if (empty($this->data)) {
-			$this->set('nivelesEscolares', $this->CiclosEscolare->NivelesEscolare->generateList());
+			$this->set('nivelesEscolares', $this->CiclosEscolare->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
 			$this->render();
 		} else {
 			$this->cleanUpFields();
@@ -28,7 +20,7 @@ class CiclosEscolaresController extends AppController {
 				$this->redirect('/ciclos_escolares/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('nivelesEscolares', $this->CiclosEscolare->NivelesEscolare->generateList());
+				$this->set('nivelesEscolares', $this->CiclosEscolare->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
 			}
 		}
 	}
@@ -40,7 +32,7 @@ class CiclosEscolaresController extends AppController {
 				$this->redirect('/ciclos_escolares/index');
 			}
 			$this->data = $this->CiclosEscolare->read(null, $id);
-			$this->set('nivelesEscolares', $this->CiclosEscolare->NivelesEscolare->generateList());
+			$this->set('nivelesEscolares', $this->CiclosEscolare->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
 		} else {
 			$this->cleanUpFields();
 			if ($this->CiclosEscolare->save($this->data)) {
@@ -48,7 +40,7 @@ class CiclosEscolaresController extends AppController {
 				$this->redirect('/ciclos_escolares/index');
 			} else {
 				$this->Session->setFlash('Please correct errors below.');
-				$this->set('nivelesEscolares', $this->CiclosEscolare->NivelesEscolare->generateList());
+				$this->set('nivelesEscolares', $this->CiclosEscolare->NivelesEscolare->generateList(null, null, null, '{n}.NivelesEscolare.id', '{n}.NivelesEscolare.valor'));
 			}
 		}
 	}

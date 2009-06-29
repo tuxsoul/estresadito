@@ -1,28 +1,26 @@
-<h2>Edit Ciclos Escolare</h2>
+<h2>Editar Ciclo Escolar</h2>
 <form action="<?php echo $html->url('/ciclos_escolares/edit/'.$html->tagValue('CiclosEscolare/id')); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('CiclosEscolare/niveles_escolares_id', 'Niveles Escolares');?>
+	<?php echo $form->labelTag('CiclosEscolare/niveles_escolares_id', 'Nivel Escolar');?>
  	<?php echo $html->selectTag('CiclosEscolare/niveles_escolares_id', $nivelesEscolares, $html->tagValue('CiclosEscolare/niveles_escolares_id'), array(), array(), false);?>
-	<?php echo $html->tagErrorMsg('CiclosEscolare/niveles_escolares_id', 'Please select the Niveles Escolares.') ?>
+	<?php echo $html->tagErrorMsg('CiclosEscolare/niveles_escolares_id', 'Por favor selecciona el Nivel Escolar.') ?>
 </div>
 <div class="required"> 
-	<?php echo $form->labelTag('CiclosEscolare/inicio', 'Inicio');?>
+	<?php echo $form->labelTag('CiclosEscolare/inicio', 'Año de Inicio');?>
  	<?php echo $html->input('CiclosEscolare/inicio', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('CiclosEscolare/inicio', 'Please enter the Inicio.');?>
+	<?php echo $html->tagErrorMsg('CiclosEscolare/inicio', 'Por favor ingresa el año de inicio.');?>
 </div>
 <div class="required"> 
-	<?php echo $form->labelTag('CiclosEscolare/fin', 'Fin');?>
+	<?php echo $form->labelTag('CiclosEscolare/fin', 'Año de Terminación');?>
  	<?php echo $html->input('CiclosEscolare/fin', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('CiclosEscolare/fin', 'Please enter the Fin.');?>
+	<?php echo $html->tagErrorMsg('CiclosEscolare/fin', 'Por favor ingresa el año de terminación.');?>
 </div>
 <?php echo $html->hidden('CiclosEscolare/id')?>
 <div class="submit">
-	<?php echo $html->submit('Save');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('Delete','/ciclos_escolares/delete/' . $html->tagValue('CiclosEscolare/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('CiclosEscolare/id'));?>
-<li><?php echo $html->link('List Ciclos Escolares', '/ciclos_escolares/index')?></li>
-<li><?php echo $html->link('View Niveles Escolares', '/niveles_escolares/index/');?></li>
-<li><?php echo $html->link('Add Niveles Escolares', '/niveles_escolares/add/');?></li>
+<li><?php echo $html->link('Borrar','/ciclos_escolares/delete/' . $html->tagValue('CiclosEscolare/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('CiclosEscolare/id'));?>
+<li><?php echo $html->link('Regresar', '/ciclos_escolares/index')?></li>
 </ul>
