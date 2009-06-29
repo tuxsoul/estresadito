@@ -35,5 +35,6 @@ class MunicipiosComponent extends Object {
 			}
 		}
 	}
+
 }
 ?>

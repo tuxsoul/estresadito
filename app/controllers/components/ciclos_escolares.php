@@ -27,7 +27,7 @@ class CiclosEscolaresComponent extends Object {
 		}
 	}
 
-	// acomoda los datos de una consulta tipo findAll de los municipios, para ser
+	// acomoda los datos de una consulta tipo findAll de los ciclos escolares, para ser
 	// mostrado como un simple print, pero respetando un formato de salida
 	function mostrar($id, $ciclos, $niveles) {
 		if(!empty($id) && !empty($ciclos) && !empty($niveles)) {
@@ -39,5 +39,6 @@ class CiclosEscolaresComponent extends Object {
 			}
 		}
 	}
+
 }
 ?>

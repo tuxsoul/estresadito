@@ -22,17 +22,5 @@ class MaestrosComponent extends Object {
 		}
 	}
 
-	// acomoda los datos de una consulta tipo findAll de los municipios, para ser
-	// mostrado como un simple print, pero respetando un formato de salida
-	function mostrar($id, $datos) {
-		if(!empty($id) && !empty($datos)) {
-			$tmp = $this->crearSelect($datos);
-			$lugar = $tmp[$id];
-
-			if(!empty($lugar)) {
-				return $lugar;
-			}
-		}
-	}
 }
 ?>

@@ -1,25 +1,21 @@
-<h2>Edit Alumnos Grupo</h2>
+<h2>Editar Alumno en Grupo</h2>
 <form action="<?php echo $html->url('/alumnos_grupos/edit/'.$html->tagValue('AlumnosGrupo/id')); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('AlumnosGrupo/grupos_id', 'Grupos');?>
+	<?php echo $form->labelTag('AlumnosGrupo/grupos_id', 'Grupo');?>
  	<?php echo $html->selectTag('AlumnosGrupo/grupos_id', $grupos, $html->tagValue('AlumnosGrupo/grupos_id'), array(), array(), false);?>
-	<?php echo $html->tagErrorMsg('AlumnosGrupo/grupos_id', 'Please select the Grupos.') ?>
+	<?php echo $html->tagErrorMsg('AlumnosGrupo/grupos_id', 'Por favor selecciona el Grupo.') ?>
 </div>
 <div class="required"> 
-	<?php echo $form->labelTag('AlumnosGrupo/alumnos_id', 'Alumnos');?>
+	<?php echo $form->labelTag('AlumnosGrupo/alumnos_id', 'Alumno');?>
  	<?php echo $html->selectTag('AlumnosGrupo/alumnos_id', $alumnos, $html->tagValue('AlumnosGrupo/alumnos_id'), array(), array(), false);?>
-	<?php echo $html->tagErrorMsg('AlumnosGrupo/alumnos_id', 'Please select the Alumnos.') ?>
+	<?php echo $html->tagErrorMsg('AlumnosGrupo/alumnos_id', 'Por favor selecciona al Alumno.') ?>
 </div>
 <?php echo $html->hidden('AlumnosGrupo/id')?>
 <div class="submit">
-	<?php echo $html->submit('Save');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('Delete','/alumnos_grupos/delete/' . $html->tagValue('AlumnosGrupo/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('AlumnosGrupo/id'));?>
-<li><?php echo $html->link('List Alumnos Grupos', '/alumnos_grupos/index')?></li>
-<li><?php echo $html->link('View Grupos', '/grupos/index/');?></li>
-<li><?php echo $html->link('Add Grupos', '/grupos/add/');?></li>
-<li><?php echo $html->link('View Alumnos', '/alumnos/index/');?></li>
-<li><?php echo $html->link('Add Alumnos', '/alumnos/add/');?></li>
+<li><?php echo $html->link('Borrar','/alumnos_grupos/delete/' . $html->tagValue('AlumnosGrupo/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('AlumnosGrupo/id'));?>
+<li><?php echo $html->link('Regresar', '/alumnos_grupos/index')?></li>
 </ul>
