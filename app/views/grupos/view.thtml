@@ -19,6 +19,7 @@
 
 <div class="related">
 <?php if (!empty($grupo['Alumno'])):?>
+
 <h3>Alumnos Relacionados</h3>
 <table cellpadding="0" cellspacing="0">
 <tr>
@@ -31,6 +32,7 @@
 	<td><?php echo $alumno['clave']; ?></td>
 	<td><?php echo $alumno['nombre'] . ' ' . $alumno['apellido_paterno'] . ' ' . $alumno['apellido_materno']; ?></td>
 	<td class="actions">
+		<?php echo $html->link('Calificaciones', '/calificaciones/index/1/' . $grupo['Grupo']['id']);?>
 		<?php echo $html->link('Ver', '/alumnos/view/' . $alumno['id']);?>
 		<?php echo $html->link('Edita', '/alumnos/edit/' . $alumno['id']);?>
 		<?php echo $html->link('Borrar', '/alumnos/delete/' . $alumno['id'], null, 'Are you sure you want to delete: id ' . $alumno['id'] . '?');?>

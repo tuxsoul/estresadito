@@ -1,24 +1,16 @@
-<h2>New Calificacione</h2>
+<h2>Nueva Calificación</h2>
 <form action="<?php echo $html->url('/calificaciones/add'); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('Calificacione/alumnos_grupos_id', 'Alumnos Grupos Id');?>
- 	<?php echo $html->input('Calificacione/alumnos_grupos_id', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Calificacione/alumnos_grupos_id', 'Please enter the Alumnos Grupos Id.');?>
-</div>
-<div class="required"> 
-	<?php echo $form->labelTag('Calificacione/maestros_materias_id', 'Maestros Materias Id');?>
- 	<?php echo $html->input('Calificacione/maestros_materias_id', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Calificacione/maestros_materias_id', 'Please enter the Maestros Materias Id.');?>
-</div>
-<div class="required"> 
-	<?php echo $form->labelTag('Calificacione/calificacion', 'Calificacion');?>
+	<?php echo $form->labelTag('Calificacione/calificacion', 'Calificación');?>
  	<?php echo $html->input('Calificacione/calificacion', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Calificacione/calificacion', 'Please enter the Calificacion.');?>
+	<?php echo $html->tagErrorMsg('Calificacione/calificacion', 'Por favor ingresa la Calificación.');?>
 </div>
+<?php echo $html->hidden('Calificacione/alumnos_grupos_id', array('value' => $alumnos)); ?>
+<?php echo $html->hidden('Calificacione/maestros_materias_id', array('value' => $materias)); ?>
 <div class="submit">
-	<?php echo $html->submit('Add');?>
+	<?php echo $html->submit('Agregar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('List Calificaciones', '/calificaciones/index')?></li>
+<li><?php echo $html->link('Regresar', 'javascript:history.back(1)')?></li>
 </ul>

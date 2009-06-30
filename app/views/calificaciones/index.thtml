@@ -1,30 +1,60 @@
 <div class="calificaciones">
-<h2>List Calificaciones</h2>
 
-<table cellpadding="0" cellspacing="0">
-<tr>
-	<th>Id</th>
-	<th>Alumnos Grupos Id</th>
-	<th>Maestros Materias Id</th>
-	<th>Calificacion</th>
-	<th>Actions</th>
-</tr>
-<?php foreach ($calificaciones as $calificacione): ?>
-<tr>
-	<td><?php echo $calificacione['Calificacione']['id']; ?></td>
-	<td><?php echo $calificacione['Calificacione']['alumnos_grupos_id']; ?></td>
-	<td><?php echo $calificacione['Calificacione']['maestros_materias_id']; ?></td>
-	<td><?php echo $calificacione['Calificacione']['calificacion']; ?></td>
-	<td class="actions">
-		<?php echo $html->link('View','/calificaciones/view/' . $calificacione['Calificacione']['id'])?>
-		<?php echo $html->link('Edit','/calificaciones/edit/' . $calificacione['Calificacione']['id'])?>
-		<?php echo $html->link('Delete','/calificaciones/delete/' . $calificacione['Calificacione']['id'], null, 'Are you sure you want to delete id ' . $calificacione['Calificacione']['id'])?>
-	</td>
-</tr>
+<?php if($formato) { ?>
+<h2>Calificaciones de <?php echo $alumno['Alumno']['nombre'] . ' ' . $alumno['Alumno']['apellido_paterno'] . ' ' . $alumno['Alumno']['apellido_materno']; ?></h2>
+
+<dl>
+	<dt>Nivel Escolar</dt>
+	<dd>&nbsp;<?php echo $nivelEscolar; ?></dd>
+	<dt>Ciclo Escolar</dt>
+	<dd>&nbsp;<?php echo $cicloEscolar; ?></dd>
+	<dt>Grado</dt>
+	<dd>&nbsp;<?php echo $grado; ?></dd>
+	<dt>Grupo</dt>
+	<dd>&nbsp;<?php echo $grupo; ?></dd>
+</dl>
+
+<br /> <br />
+<br /> <br />
+<br /> <br />
+<br /> <br />
+
+<div class="related">
+<?php foreach ($materias as $materia): ?>
+
+	<h1><?php echo $materia['Materia']['nombre']; ?></h1>
+	Maestro: <?php echo $materia['Maestro']['nombre'] . ' ' . $materia['Maestro']['apellido_paterno'] . ' ' . $materia['Maestro']['apellido_materno']; ?>
+
+	<?php $x = 1; ?>
+
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<th>Evaluación</th>
+			<th>Calificación</th>
+			<th>Acciones</th>
+		</tr>
+		<?php foreach($calificaciones as $calificacion): ?>
+			<?php if($calificacion['Calificacione']['maestros_materias_id'] == $materia['Materia']['id']) { ?>
+				<tr>
+					<td><?php echo $x++; ?>
+					<td><?php echo $calificacion['Calificacione']['calificacion']; ?></td>
+					<td class="actions">
+						<?php echo $html->link('Editar','/calificaciones/edit/' . $calificacion['Calificacione']['id'])?>
+						<?php echo $html->link('Borrar','/calificaciones/delete/' . $calificacion['Calificacione']['id'], null, 'Are you sure you want to delete id ' . $calificacion['Calificacione']['id'])?>
+					</td>
+				</tr>
+			<?php } ?>
+		<?php endforeach; ?>
+	</table>
+	<ul class="actions">
+		<li><?php echo $html->link('Agregar Calificacion', '/calificaciones/add/' . $alumnosGrupos . '/' . $materia['Materia']['id']); ?></li>
+	</ul>
+
+	<br /> <br />
+
 <?php endforeach; ?>
-</table>
-
-<ul class="actions">
-	<li><?php echo $html->link('New Calificacione', '/calificaciones/add'); ?></li>
-</ul>
 </div>
+
+<?php } ?>
+</div>
+

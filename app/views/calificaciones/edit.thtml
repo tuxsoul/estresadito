@@ -1,26 +1,16 @@
-<h2>Edit Calificacione</h2>
+<h2>Editar Calificación</h2>
 <form action="<?php echo $html->url('/calificaciones/edit/'.$html->tagValue('Calificacione/id')); ?>" method="post">
 <div class="required"> 
-	<?php echo $form->labelTag('Calificacione/alumnos_grupos_id', 'Alumnos Grupos Id');?>
- 	<?php echo $html->input('Calificacione/alumnos_grupos_id', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Calificacione/alumnos_grupos_id', 'Please enter the Alumnos Grupos Id.');?>
-</div>
-<div class="required"> 
-	<?php echo $form->labelTag('Calificacione/maestros_materias_id', 'Maestros Materias Id');?>
- 	<?php echo $html->input('Calificacione/maestros_materias_id', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Calificacione/maestros_materias_id', 'Please enter the Maestros Materias Id.');?>
-</div>
-<div class="required"> 
-	<?php echo $form->labelTag('Calificacione/calificacion', 'Calificacion');?>
+	<?php echo $form->labelTag('Calificacione/calificacion', 'Calificación');?>
  	<?php echo $html->input('Calificacione/calificacion', array('size' => '60'));?>
-	<?php echo $html->tagErrorMsg('Calificacione/calificacion', 'Please enter the Calificacion.');?>
+	<?php echo $html->tagErrorMsg('Calificacione/calificacion', 'Por favor ingresa la Calificación.');?>
 </div>
 <?php echo $html->hidden('Calificacione/id')?>
 <div class="submit">
-	<?php echo $html->submit('Save');?>
+	<?php echo $html->submit('Guardar');?>
 </div>
 </form>
 <ul class="actions">
-<li><?php echo $html->link('Delete','/calificaciones/delete/' . $html->tagValue('Calificacione/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Calificacione/id'));?>
-<li><?php echo $html->link('List Calificaciones', '/calificaciones/index')?></li>
+<li><?php echo $html->link('Borrar','/calificaciones/delete/' . $html->tagValue('Calificacione/id'), null, 'Are you sure you want to delete: id ' . $html->tagValue('Calificacione/id'));?>
+<li><?php echo $html->link('Regresar', 'javascript:history.back(1)')?></li>
 </ul>
