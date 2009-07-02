@@ -3,7 +3,7 @@ class AlumnosController extends AppController {
 
 	var $name = 'Alumnos';
 	var $helpers = array('Html', 'Form' );
-	var $components = 'Municipios';
+	var $components = array('Municipios');
 
 	function index() {
 		$this->Alumno->recursive = 2;

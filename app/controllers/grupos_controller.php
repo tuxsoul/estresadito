@@ -3,7 +3,7 @@ class GruposController extends AppController {
 
 	var $name = 'Grupos';
 	var $helpers = array('Html', 'Form' );
-	var $components = 'CiclosEscolares';
+	var $components = array('CiclosEscolares');
 
 	function index() {
 		$this->Grupo->recursive = 2;

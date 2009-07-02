@@ -3,7 +3,7 @@ class PagosController extends AppController {
 
 	var $name = 'Pagos';
 	var $helpers = array('Html', 'Form' );
-	var $components = 'Alumnos';
+	var $components = array('Alumnos');
 
 	function index() {
 		$this->Pago->recursive = 0;
