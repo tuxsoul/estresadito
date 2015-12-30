@@ -102,7 +102,7 @@ create table maestros (
   apellido_paterno          varchar(50),
   apellido_materno          varchar(50),
   constraint pk_Maestros primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- alumnos
 create table alumnos (
@@ -124,14 +124,14 @@ create table alumnos (
   entre_calles              varchar(100),
   codigo_postal             int(10),
   constraint pk_Alumnos primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- generos
 create table generos (
   id                        int auto_increment not null,
   valor                     varchar(10),
   constraint pk_Generos primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- pagos
 create table pagos (
@@ -146,7 +146,7 @@ create table pagos (
   observaciones             text,
   fecha                     timestamp default NOW(),
   constraint pk_Pagos primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- costos
 create table costos (
@@ -157,28 +157,28 @@ create table costos (
   descuento                 bool,
   descuento_porcentaje      bool,
   constraint pk_Costos primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- niveles_escolares
 create table niveles_escolares (
   id                        int auto_increment not null,
   valor                     varchar(20),
   constraint pk_Niveles_escolares primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- estados_civiles
 create table estados_civiles (
   id                        int auto_increment not null,
   valor                     varchar(20),
   constraint pk_Estados_civiles primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- nacionalidades
 create table nacionalidades (
   id                        int auto_increment not null,
   valor                     varchar(50),
   constraint pk_Nacionalidades primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- municipios_estados
 create table municipios_estados (
@@ -187,7 +187,7 @@ create table municipios_estados (
   estado                    varchar(50),
   codigo_postal             int(10),
   constraint pk_Municipios_estados primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- grupos
 create table grupos (
@@ -196,21 +196,21 @@ create table grupos (
   grado                     int(1) not null,
   grupo                     varchar(1) not null,
   constraint pk_Grupos primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- statuses
 create table statuses (
   id                        int auto_increment not null,
   valor                     varchar(20),
   constraint pk_Statuses primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- materias
 create table materias (
   id                        int auto_increment not null,
   nombre                    varchar(50),
   constraint pk_Materias primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- ciclos_escolares
 create table ciclos_escolares (
@@ -219,7 +219,7 @@ create table ciclos_escolares (
   inicio                    int(5),
   fin                       int(5),
   constraint pk_Ciclos_escolares primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- maestros_materias
 create table maestros_materias (
@@ -229,7 +229,7 @@ create table maestros_materias (
   ciclos_escolares_id       int not null,
   grado                     int(1),
   constraint pk_Maestros_materias primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- calificaciones
 create table calificaciones (
@@ -238,7 +238,7 @@ create table calificaciones (
   maestros_materias_id      int not null,
   calificacion              float,
   constraint pk_Calificaciones primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 -- alumnos_grupos
 create table alumnos_grupos (
@@ -246,7 +246,7 @@ create table alumnos_grupos (
   grupos_id                 int not null,
   alumnos_id                int not null,
   constraint pk_Alumnos_grupos primary key (id)
-) type = InnoDB ;
+) engine = InnoDB ;
 
 
 
