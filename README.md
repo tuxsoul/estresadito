@@ -1,5 +1,5 @@
 
-=== Estresadito
+# Estresadito
 
   Es un pequeño software, hecho para el control de una escuela, basado en la
   información de escuelas en México. "Estresadito" obtiene su nombre dado el 
@@ -19,7 +19,7 @@
   PostgreSQL, etc.
 
 
-=== License
+## License
 
   This program is free software; you can redistribute it and/or modify it under
   the terms of the GNU General Public License as published by the Free Software
@@ -32,7 +32,7 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
-=== Descarga
+## Descarga
 
   "Estresadito" ya incluye CakePHP el cual es un framework para desarrollo 
   rápido en PHP, por lo que trataré de colocar la versión más estable.
@@ -40,33 +40,37 @@
   En caso de que necesites o desees descargar CakePHP, puedes hacerlo desde 
   aquí:
 
-  	http://www.cakephp.org
+  http://www.cakephp.org
 
   "Estresadito" esta alojado en un servidor Git como Github, puedes obtener el 
   código si utilizas Git, de la siguiente manera:
 
-	$ git clone git://github.com/tuxsoul/estresadito
+  ```
+  git clone git://github.com/tuxsoul/estresadito
+  ```
 	
   Y actualizar tu repositorio local:
 
-	$ git pull origin
+  ```
+  git pull origin
+  ```
 	
   De esta forma estarás seguro de obtener siempre el código más actualizado, de
   otra forma puedes descargar un paquete (.zip) o (.tar.gz) aquí:
 
-  	http://github.com/tuxsoul/estresadito/downloads
+  http://github.com/tuxsoul/estresadito/downloads
 
   Aquí lo más sencillo si usas un sistema operativo como windows es instalar 
   XAMPP, el cual incluye un servidor web, un servidor de base de datos, 
   phpmyadmin y otras utilerías más, este software lo puedes descargar aquí:
 
-	http://www.apachefriends.org/es/xampp.html
+  http://www.apachefriends.org/es/xampp.html
 
   Si utilizas un ambiente basado en GNU/Linux, puedes buscar en Google como 
   hacer funcionar un sistema LAMP.
 
 
-=== Instalación
+## Instalación
 
   Para la instalación primero copia todo la carpeta de "Estresadito" al 
   directorio htdocs, de tu servidor web.
@@ -78,8 +82,9 @@
   Con esto ya tendrás funcionando a "Estresadito".
 
 
-=== Contacto
+## Contacto
 
-  Mario Oyorzabal Salgado <tuxsoul@tuxsoul.com>
+  Mario Oyorzabal Salgado
+  <tuxsoul@tuxsoul.com>
   http://blog.tuxsoul.com
   
