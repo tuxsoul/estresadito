@@ -48,7 +48,7 @@ Puedes apoyar al proyecto de diferentes maneras:
 También puedes enviar [bitcoins](http://bitcoin.org), para apoyar las tazas de café y rebanadas de 
 pizza que usamos los programadores de combustible ;).
 
-[![donaciones](https://coinkite.com/static/img/ckbtn/coinkite-button-donate-bitcoin.png)](https://coinkite.com/pay/89659BA350-513C06)
+[![donaciones](https://images.tuxsoul.com/hotlink-ok/bitcoin-button_168x64.png)](https://coffee.tuxsoul.com)
 
 
 ## Descarga
