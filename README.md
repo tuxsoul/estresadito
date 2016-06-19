@@ -31,7 +31,7 @@ along with this program; if not, write to the Free Software Foundation, Inc.,
 ## Seguridad
 
 Estresadito, hará uso de la cadena de bloques o blockchain, tecnología que usa
-bitcoin, con lo cual dará seguridad a toda la información financiera y de 
+[bitcoin](http://bitcoin.org), con lo cual dará seguridad a toda la información financiera y de 
 calificaciones, para evitar la venta de las mismas y la mala manipulación de la
 información.
 
@@ -40,11 +40,13 @@ información.
 
 Puedes apoyar al proyecto de diferentes maneras:
 
-- Dándolo a conocer, mediante [facebook](https://www.facebook.com/sistema.estresadito) a tus amigos
+- Dándolo a conocer, mediante [facebook](https://www.facebook.com/sistema.estresadito) a tus amigos:
+  https://www.facebook.com/sistema.estresadito
 - Usándolo en tu escuela
 - Enviando ideas para nuevas funciones
 - Enviando código para corrección de errores o para nuevas funciones
-- De manera económica mediante [bitcoin](https://coffee.tuxsoul.com)
+- De manera económica mediante [bitcoin](https://coffee.tuxsoul.com):
+  https://coffee.tuxsoul.com
 
 [![donaciones](https://images.tuxsoul.com/hotlink-ok/bitcoin-button_168x64.png)](https://coffee.tuxsoul.com)
 
