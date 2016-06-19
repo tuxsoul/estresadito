@@ -1,25 +1,17 @@
 # Estresadito
 
-Es un pequeño software, hecho para el control de una escuela, basado en la
-información de escuelas en México. "Estresadito" obtiene su nombre dado el 
-estrés que genera a los alumnos y padres, este tipo de información: la 
-calificación y pagos de colegiatura de sus hijos, claro en lugares donde se 
-aplica. Se tiene por objetivo llevar el control de toda una escuela, algo que 
-siempre es imposible de cumplir ya que no todas las escuelas son iguales, al 
-menos eso creo, si deseas que "Estresadito" pueda ajustarse a tus necesidades 
-escríbeme y con gusto veremos que se puede hacer.
+Nace para brindar un sistema de control escolar y administrativo, para toda
+institución educativa, sin importar sus recursos, la idea es tener un sistema
+libre, pero que a la vez permita a las instituciones educativas dar información
+de transparencia hacia padres de familia y la población, en otras palabras 
+permitirá auditar el uso de los recursos. Estresadito no esta pensado para 
+escuelas privadas.
 
-"Estresadito" se necesita ejecutar bajo un servidor web basado en Apache, con
-soporte para PHP y un servidor de base de datos como MySQL, dado que se usa el
-motor de CakePHP, puede usar cualquier base de datos. 
+Estresadito obtiene su nombre dado el estrés que se genera en alumnos y 
+maestros.
 
-El diseño de la base de datos esta hecho en dia y tedia2sql, lo cual permite
-convertir la información de la base datos para otros motores como por ejemplo
-PostgreSQL, etc.
-
-"Estresadito" es software libre, significa que no necesitas pagar y eres libre
-de usarlo, descargarlo, modificarlo, instalarlo, etc., siempre y cuando solo
-respetes la licencia con la cual esta liberado.
+Estresadito, no es un sistema para evaluar, ni para la implementación de 
+cursos, para ello recomiendo una herramienta de software libre llamada moodle.
 
 
 ## Licencia
@@ -35,34 +27,31 @@ along with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
+## Seguridad
+
+Estresadito, hará uso de la cadena de bloques o blockchain, tecnología que usa
+bitcoin, con lo cual dará seguridad a toda la información financiera y de 
+calificaciones, para evitar la venta de las mismas y la mala manipulación de la
+información.
+
+
 ## Aportaciones
 
 Puedes apoyar al proyecto de diferentes maneras:
 
-- Dándolo a conocer
+- Dándolo a conocer, mediante [facebook](https://www.facebook.com/sistema.estresadito) a tus amigos
 - Usándolo en tu escuela
 - Enviando ideas para nuevas funciones
 - Enviando código para corrección de errores o para nuevas funciones
-- Etc.
-
-También puedes enviar [bitcoins](http://bitcoin.org), para apoyar las tazas de café y rebanadas de 
-pizza que usamos los programadores de combustible ;).
+- De manera económica mediante [bitcoin](https://coffee.tuxsoul.com)
 
 [![donaciones](https://images.tuxsoul.com/hotlink-ok/bitcoin-button_168x64.png)](https://coffee.tuxsoul.com)
 
 
 ## Descarga
 
-"Estresadito" ya incluye CakePHP el cual es un framework para desarrollo 
-rápido en PHP, por lo que trataré de colocar la versión más estable.
-
-En caso de que necesites o desees descargar CakePHP, puedes hacerlo desde 
-aquí:
-
-http://www.cakephp.org
-
-"Estresadito" esta alojado en un servidor Git como Github, puedes obtener el 
-código si utilizas Git, de la siguiente manera:
+El código fuente de Estresadito lo puedes obtener utilizando Git, de la 
+siguiente manera:
 
 ```
 $ git clone git://github.com/tuxsoul/estresadito
@@ -75,30 +64,14 @@ $ git pull origin
 ```
 	
 De esta forma estarás seguro de obtener siempre el código más actualizado, de
-otra forma puedes descargar un paquete (.zip) o (.tar.gz) aquí:
+otra forma puedes descargar un paquete (.zip) o (.tar.gz):
 
 https://github.com/tuxsoul/estresadito/releases
   
-Aquí lo más sencillo si usas un sistema operativo como windows es instalar 
-XAMPP, el cual incluye un servidor web, un servidor de base de datos, 
-phpmyadmin y otras utilerias más, este software lo puedes descargar aquí:
-
-http://www.apachefriends.org/es/xampp.html
-
-Si utilizas un ambiente basado en GNU/Linux, puedes buscar en Google como 
-hacer funcionar un sistema LAMP.
-
 
 ## Instalación
 
-Para la instalación primero copia todo la carpeta de "Estresadito" al 
-directorio htdocs, de tu servidor web.
-
-Después de ello, hay que crear la base de datos y tablas, para eso, puedes
-encontrar un archivo sql, en el directorio docs/sql, dependiendo tu servidor 
-de base datos, puedes seleccionar si usar una version MySQL o PostgreSQL.
-
-Con esto ya tendrás funcionando a "Estresadito".
+Pendiente ...
 
 
 ## Contacto
