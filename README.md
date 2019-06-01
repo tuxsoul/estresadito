@@ -61,11 +61,11 @@ aquí:
 
 http://www.cakephp.org
 
-"Estresadito" esta alojado en un servidor Git como Github, puedes obtener el 
+"Estresadito" esta alojado en un servidor Git como Gitlab, puedes obtener el 
 código si utilizas Git, de la siguiente manera:
 
 ```
-$ git clone git://github.com/tuxsoul/estresadito
+$ git clone git://gitlab.com/tuxsoul/estresadito
 ```
 	
 Y actualizar tu repositorio local:
@@ -77,7 +77,7 @@ $ git pull origin
 De esta forma estarás seguro de obtener siempre el código más actualizado, de
 otra forma puedes descargar un paquete (.zip) o (.tar.gz) aquí:
 
-https://github.com/tuxsoul/estresadito/releases
+https://gitlab.com/tuxsoul/estresadito/releases
   
 Aquí lo más sencillo si usas un sistema operativo como windows es instalar 
 XAMPP, el cual incluye un servidor web, un servidor de base de datos, 
