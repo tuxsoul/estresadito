@@ -1,4 +1,5 @@
 # Estresadito
+[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://www.yiiframework.com/)
 
 Es un pequeño software, hecho para el control de una escuela, basado en la
 información de escuelas en México. "Estresadito" obtiene su nombre dado el 
